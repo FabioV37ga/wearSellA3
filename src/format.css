@@ -1,0 +1,9 @@
+.header-comment{
+    text-decoration: none;
+    text-align: center;
+    color: #AAA;
+    margin: 0 15px;
+}
+.header-comment:hover{
+    color: rgb(148, 148, 148)
+}
