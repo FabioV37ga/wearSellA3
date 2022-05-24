@@ -7,3 +7,30 @@
 .header-comment:hover{
     color: rgb(148, 148, 148)
 }
+.menu-item{
+    text-decoration: none;
+    color: inherit;
+    margin: 0 15px;
+    font-size: 20px;
+}
+.header__menu ul li{
+    display: inline-block;
+}
+.menu-item:hover{
+    font-size: 21px;
+    transition: .5s;
+}
+.header__search input{
+    border: 1px solid
+}
+.header__search button{
+    background: black;
+    border: 1px solid black;
+    color:white;
+}
+.menu__icons img{
+    width: 50px
+}
+.i2{
+    width:42px !important;
+}
