@@ -38,17 +38,13 @@
     width: 50px
 }
 
-.i2 {
-    width: 42px !important;
-}
-@media (max-width: 615px){
-    .break{
+
+@media (max-width: 615px) {
+    .break {
         flex-basis: 100%;
         height: 0;
     }
-    .i2 {
-        width: 30px !important;
-    }
+
 }
 
 @media (max-width: 760px) {
