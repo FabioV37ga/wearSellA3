@@ -40,8 +40,13 @@
     display: flex;
     align-items: center;
 }
+.header__search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-@media (max-width: 615px) {
+@media (max-width: 650px) {
     .header {
         height: 180px;
     }
@@ -75,27 +80,26 @@
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 779px) {
 
     .header__logo img {
-        width: 40px;
-    }
-
-    .header__menu {
-        width: 250px;
+        width: 70px;
     }
 
     .header__menu ul {
         padding: 0;
     }
+
 }
 
-@media (min-width: 761px) {
+@media (min-width: 780px) {
     .header__logo img {
         width: 75px;
     }
-
-    .header__menu {
-        width: 355px;
+    .header__search input {
+        width: 168px;
+        height: 26px;
+        border-radius: 3px
     }
+
 }
