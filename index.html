@@ -1,57 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="ptbr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WearSell | home</title>
-    <link rel="stylesheet" href="src/reset.css">
-    <link rel="stylesheet" href="src/format.css">
+    <title>WearSell | Home</title>
     <link rel="stylesheet" href="src/page.css">
 </head>
 
 <body>
     <header>
-        <section class="header">
-            <div class="header__top">
-                <a href="#" class="header-comment">Adicionar item</a>
-                <a href="#" class="header-comment">FAQ</a>
-                <a href="#" class="header-comment">Termos de uso</a>
+        <section class="header-container">
+            <div class="header-container-inside">
+                <div class="header-container-top-mobile">
+                    <div class="top-menu-mobile">
+                        <svg enable-background="new 0 0 384 384" version="1.1" viewBox="0 0 384 384"
+                            xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="277.33" width="384" height="42.667"></rect>
+                            <rect y="170.67" width="384" height="42.667"></rect>
+                            <rect y="64" width="384" height="42.667"></rect>
+                        </svg>
+                    </div>
+                    <h1 class="top-title-mobile">
+                        <img src="src/img/header__logo.svg" alt="Logo WearSell">
+                    </h1>
+                    <div class="top-cart-mobile">
+                        <img src="src/img/cart.svg" alt="Carrinho de compras">
+                    </div>
+                </div>
+                <span class="break"></span>
+                <div class="bot-menu-mobile">
+                    <div class="bot-search-mobile">
+                        <div class="search">
+                            <a href="" id="search">
+                                <img src="src/img/search.svg" alt="Lupa de pesquisa">
+                            </a>
+                        </div>
+                        <form action="/buscar">
+                            <input type="text" placeholder="Digite o que você procura">
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="header__mid">
-                <div class="header__logo">
-                    <a href="#"><img src="src/img/header__logo.png" alt="logo WearSell"></a>
-                </div>
-                <span class="break"></span>
-                <div class="header__menu">
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="#" class="menu-item">Roupas</a>
-                            </li>
-                            <li>
-                                <a href="#" class="menu-item">Calcados</a>
-                            </li>
-                            <li>
-                                <a href="#" class="menu-item">Acessorios</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <span class="break"></span>
-                <div class="header__search">
-                    <input type="text" placeholder="Pesquise aqui...">
-                    <button>></button>
-                </div>
-                <span class="break"></span>
-                <div class="menu__icons">
-                    <a href="#"><img src="src/img/profile.png" alt="" class="icon"></a>
-                    <a href="#"><img src="src/img/cart.png" alt="" class="icon"></a>
-                </div>
-
-            </div>
-
         </section>
     </header>
 </body>
