@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="src/header.css">
     <link rel="stylesheet" href="src/header-desktop.css">
     <link rel="stylesheet" href="src/base.css">
-    <link rel="stylesheet" href="src/dropmenu.css">
+    <link rel="stylesheet" href="src/dropmenu-mobile.css">
+    <link rel="stylesheet" href="src/dropmenu-desktop.css">
 </head>
 
 <body>
@@ -26,12 +27,29 @@
 
                     <!--Menu expand (mobile only)-->
                     <div class="top-menu-mobile">
-                        <svg enable-background="new 0 0 384 384" version="1.1" viewBox="0 0 384 384"
-                            xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="277.33" width="384" height="42.667"></rect>
-                            <rect y="170.67" width="384" height="42.667"></rect>
-                            <rect y="64" width="384" height="42.667"></rect>
-                        </svg>
+                        <div class="menu">
+                            <svg enable-background="new 0 0 384 384" version="1.1" viewBox="0 0 384 384"
+                                xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="277.33" width="384" height="42.667"></rect>
+                                <rect y="170.67" width="384" height="42.667"></rect>
+                                <rect y="64" width="384" height="42.667"></rect>
+                            </svg>
+                        </div>
+                        <!--1. Dropmenu (mobile)-->
+                        <div class="menudrop-mobile">
+                            <div class="profile-mobile">
+                                <div class="profile-pic-mobile">
+                                    <a href="">
+                                        <img src="src/img/profile.svg" alt="Perfil" class="profile-desktop">
+                                    </a>
+                                </div>
+                                <div class="profile-text">
+                                    <a href="#">Acesse sua conta</a><br>
+                                    ou <a href="#">Cadastre-se</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <!--Title/logo-->

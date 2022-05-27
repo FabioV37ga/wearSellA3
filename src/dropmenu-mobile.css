@@ -1,0 +1,48 @@
+/* 
+    Esse arquivo controla o dropmenu da versão mobile.
+    Faz ele aparecer, coloca animações, etc...
+*/
+
+.menudrop-mobile:hover,
+.top-menu-mobile .menu *:hover~.menudrop-mobile,
+.top-menu-mobile .menu:hover~.menudrop-mobile {
+    visibility: visible;
+    opacity: 100%;
+}
+
+.menudrop-mobile {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+
+    height: 100%;
+    width: 300px;
+
+    background: lime;
+    margin-left: -20px;
+    margin-top: -40px;
+}
+
+.profile-mobile img {
+    position: absolute;
+    width: 50px !important
+}
+
+.profile-mobile {
+    background: red;
+    height: 54px;
+    display: flex;
+}
+
+.profile-pic-mobile>a  img{
+    margin-left: 10px !important
+}
+
+.profile-pic-mobile{
+    width: 50px;
+}
+
+.profile-text{
+    margin: auto 15px;
+}
