@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WearSell | Home</title>
-    <link rel="stylesheet" href="src/page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="src/header.css">
+    <link rel="stylesheet" href="src/header-desktop.css">
+    <link rel="stylesheet" href="src/base.css">
 </head>
 
 <body>
@@ -18,7 +21,7 @@
             <div class="header-container-inside">
 
                 <!--Parte superior do header-->
-                <div class="header-container-top-mobile">
+                <div class="header-container-top">
 
                     <!--Menu expand (mobile only)-->
                     <div class="top-menu-mobile">
@@ -30,7 +33,7 @@
                         </svg>
                     </div>
 
-                    <!--Titulo logo-->
+                    <!--Title/logo-->
                     <h1 class="top-title-mobile">
                         <img src="src/img/header__logo.svg" alt="Logo WearSell">
                     </h1>
@@ -49,8 +52,8 @@
                         </div>
                     </div>
 
-                    <!--Carrinho de compras-->
                     <div class="icons">
+                        <!--Profile icon-->
                         <div class="icon">
                             <a href="">
                                 <img src="src/img/profile.svg" alt="Perfil" class="profile-desktop">
@@ -58,25 +61,27 @@
                             <div class="icon-desc"><a href="#">Entrar</a> ou <br>
                                 <a href="#">Cadastrar</a>
                             </div>
-                                
+                            <!--Cart icon-->
                         </div>
                         <div class="icon">
                             <a href="">
                                 <img src="src/img/cart.svg" alt="Carrinho de compras" class="cart-mobile">
                             </a>
-                            <div class="icon-desc"><a href="#">Meu Carrinho</a><br> 
+                            <div class="icon-desc"><a href="#">Meu Carrinho</a><br>
                                 R$00.00
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <!--Break-->
                 <span class="break"></span>
 
-                <!--Searchbar (mobile)-->
-                <div class="bot-menu-mobile">
+                <!--Parte inferior do header-->
+                <div class="header-container-bottom">
+
+                    <!-- Searchbar (mobile) -->
                     <div class="bot-search-mobile">
                         <div class="search">
                             <a href="" id="search">
@@ -87,6 +92,38 @@
                             <input type="text" placeholder="Digite o que você procura">
                         </form>
                     </div>
+
+                    <section class="navigation-desktop">
+                        <nav>
+                            <ul class="nav-list">
+                                <li class="nav-list--item">
+                                    <a class="navigation-button" href="#">
+                                        <div>Roupas</div>
+                                        <i class="fa fa-angle-down arrd"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-list--item">
+                                    <a class="navigation-button" href="#">
+                                        <div>Calçados</div>
+                                        <i class="fa fa-angle-down arrd"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-list--item">
+                                    <a class="navigation-button" href="#">
+                                        <div>Acessórios</div>
+                                        <i class="fa fa-angle-down arrd"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-list--item">
+                                    <a class="navigation-button" href="#">
+                                        <div>Enviar Produto</div>
+                                        <i class="fa fa-angle-down arrd"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <!-- 1. Roupas / 2. Calçados / 3. Acessórios -->
                 </div>
 
             </div>
