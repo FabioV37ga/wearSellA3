@@ -1,39 +1,64 @@
-.navigation-desktop{
+/* 
+    Este arquivo controla a estilização da parte inferior do header (menu nav).
+    Apenas visivel para desktop (>=1024.11px).
+*/
+
+.navigation-desktop {
     justify-content: center;
     align-items: center;
 }
 
-.navigation-button{
+.navigation-button {
     border: 0;
     box-shadow: none;
-    /* background: red; */
     color: white;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bolder;
-    padding: 10px;
+    padding: 10px 20px;
     margin: 0 10px;
-    width: 130px;
     align-items: center;
     display: flex;
+    background: rgb(24, 24, 24);
+    /* background: lime */
 }
 
-.nav-list li:nth-child(4) .navigation-button{
-    width: 177px;
+.navigation-button:hover {
+    background: rgb(24, 24, 24);
+    transition: .2s;
+    border-radius: 4px;
 }
 
-.arrd{
-    font-size: 20px;
-    margin-left: 3px
+.nav-list li:nth-child(4) .navigation-button {
+    width: 167px;
 }
 
-.nav-list{
+.nav-list {
     display: flex;
     list-style: none;
 }
 
+.dropmenu {
+    position: absolute;
+    height: 290px;
+    width: 255px;
+    background: red;
+    margin: 11px 0 0 10.1px;
+    opacity: 0%;
+    visibility: hidden;
+    z-index: 1;
+}
+.dropmenu:hover, .nav-list--item > a:hover ~ .dropmenu{
+    /* transition: all 1s ease-in-out 1s; */
+    transition: 1s;
+    opacity: 100%;
+    visibility: visible;
+}
+
 @media (max-width: 1024.1px) {
-    .navigation-desktop, .navigation-desktop *{
+
+    .navigation-desktop,
+    .navigation-desktop * {
         display: none;
         height: 0;
         width: 0;
@@ -52,3 +77,6 @@
         justify-content: center;
     }
 }
+
+/*     transition: all 0.2s cubic-bezier(0.34, 0.57, 0.57, 1) 0s;
+ */
