@@ -1,0 +1,92 @@
+/* 
+    Este arquivo controla o funcionamento do menu drop (desktop only).
+    No geral, controla a animação de hover e troca algumas propriedades.
+    Também possui estilização do menu drop.
+*/
+
+@keyframes show-menu {
+    0% {
+        opacity: 0%;
+        transform: translateY(15px)
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}
+
+.dropmenu:hover,
+.nav-list--item>a:hover~.dropmenu {
+    /* transition: all 1s ease-in-out 1s; */
+    animation: show-menu .4s;
+    opacity: 100%;
+    visibility: visible;
+}
+
+.dropmenu {
+    opacity: 0%;
+    visibility: hidden;
+    position: absolute;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    height: 290px;
+    width: 255px;
+    margin-left: 10.1px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #dedede;
+}
+
+.dropmenu h1{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    height: 45px;
+    text-transform: uppercase;
+    
+}
+
+.dropmenu-wrap{
+    height: 250px;
+    width: 225px;
+    /* background: red; */
+
+}
+
+.dropmenu div{
+    background:rgb(223, 223, 223);
+    height: 1px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+.dropmenu-wrap ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 13px;
+    height: 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.dropmenu-wrap ul li *{
+    text-decoration: none;
+    color: black;
+    height: 10px;
+}
+
+.dropmenu-wrap ul li a:hover{
+    color: rgb(107, 107, 107)
+}
+.dropmenu-wrap ul li{
+    margin-top: 13px;
+    font-size: 15px;
+    text-transform: uppercase;
+}

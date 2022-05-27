@@ -15,16 +15,16 @@
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bolder;
-    padding: 10px 20px;
+    padding: 21px 21px;
     margin: 0 10px;
     align-items: center;
     display: flex;
-    background: rgb(24, 24, 24);
+    /* background: rgb(24, 24, 24); */
     /* background: lime */
 }
 
 .navigation-button:hover {
-    background: rgb(24, 24, 24);
+    background: rgb(14, 14, 14);
     transition: .2s;
     border-radius: 4px;
 }
@@ -36,23 +36,6 @@
 .nav-list {
     display: flex;
     list-style: none;
-}
-
-.dropmenu {
-    position: absolute;
-    height: 290px;
-    width: 255px;
-    background: red;
-    margin: 11px 0 0 10.1px;
-    opacity: 0%;
-    visibility: hidden;
-    z-index: 1;
-}
-.dropmenu:hover, .nav-list--item > a:hover ~ .dropmenu{
-    /* transition: all 1s ease-in-out 1s; */
-    transition: 1s;
-    opacity: 100%;
-    visibility: visible;
 }
 
 @media (max-width: 1024.1px) {
