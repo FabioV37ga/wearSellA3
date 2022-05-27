@@ -3,11 +3,16 @@
     Faz ele aparecer, coloca animações, etc...
 */
 
-.menudrop-mobile:hover,
+/* .menudrop-mobile:hover,
 .top-menu-mobile .menu *:hover~.menudrop-mobile,
 .top-menu-mobile .menu:hover~.menudrop-mobile {
     visibility: visible;
     opacity: 100%;
+} */
+
+.active{
+    visibility: visible !important;
+    opacity: 100% !important;
 }
 
 .menudrop-mobile {
@@ -21,7 +26,7 @@
 
     background: lime;
     margin-left: -20px;
-    margin-top: -40px;
+    margin-top: -43px;
 }
 
 .profile-mobile img {
@@ -45,4 +50,12 @@
 
 .profile-text{
     margin: auto 15px;
+}
+.top-menu-mobile .menu{
+    background: transparent;
+}
+
+.top-menu-mobile .menu:hover{
+    background: red;
+    cursor: pointer;
 }
