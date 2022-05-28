@@ -24,14 +24,20 @@
     visibility: visible;
 }
 
+.dropmenu-wrap ul, .dropmenu h1, .dropmenu{
+	display: flex;
+}
+
+.dropmenu, .dropmenu h1{
+    align-items: center;
+} 
+
 .dropmenu {
     opacity: 0%;
     visibility: hidden;
-    position: absolute;
-    background: white;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    position: absolute;
+    background: white;    
     z-index: 1;
     height: 290px;
     width: 255px;
@@ -42,13 +48,10 @@
 }
 
 .dropmenu h1 {
-    /* background: red; */
-    display: flex;
-    align-items: center;
+    /* background: red; */    
     font-size: 22px;
     height: 45px;
     text-transform: uppercase;
-
 }
 
 .dropmenu-wrap {
@@ -71,10 +74,14 @@
     padding: 0;
     margin-top: 13px;
     height: 10px;
-    width: 200px;
-    display: flex;
+    width: 200px;    
     flex-direction: column;
+}
 
+.dropmenu-wrap ul li {
+    margin-top: 13px;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
 .dropmenu-wrap ul li * {
@@ -85,10 +92,4 @@
 
 .dropmenu-wrap ul li a:hover {
     color: rgb(107, 107, 107)
-}
-
-.dropmenu-wrap ul li {
-    margin-top: 13px;
-    font-size: 15px;
-    text-transform: uppercase;
 }

@@ -4,13 +4,23 @@
     Outros utilitários...
 */
 
+/* [1] */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa&family=Roboto+Condensed&display=swap');
+/* [2] */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa&family=Roboto+Condensed&display=swap');
 
 * {
     margin: 0;
+
+    /* [1] */
+    /* font-family: 'Bebas Neue', cursive;
+    font-family: 'Comfortaa', cursive; */
+
+
+    /* [2] */
     font-family: 'Bebas Neue', cursive;
     font-family: 'Comfortaa', cursive;
-
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .break {

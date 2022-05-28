@@ -2,12 +2,16 @@
     Este arquivo controla o estilo da parte superior do header,
     onde se encontram o título, searchbar e os icones de carrinho e perfil.
 */
+.header-container,
+.header-container-inside,
+.header-container-top {
+    display: flex;
+}
 
 .header-container {
     height: 91px;
     width: 100%;
     background: black;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -15,14 +19,12 @@
 .header-container-inside {
     height: 90%;
     width: 96%;
-    display: flex;
     flex-wrap: wrap;
 }
 
 .header-container-top {
     height: 50%;
     width: 100%;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
