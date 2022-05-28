@@ -22,11 +22,14 @@
     z-index: 1;
 
     height: 100%;
-    width: 300px;
+    width: 100%;
 
-    background: lime;
+    background: transparent;
     margin-left: -20px;
     margin-top: -43px;
+
+    display:flex;
+    
 }
 
 .profile-mobile img {
@@ -35,9 +38,14 @@
 }
 
 .profile-mobile {
-    background: red;
+    background: black;
     height: 54px;
     display: flex;
+}
+
+.profile-text, .profile-text *{
+    color: white;
+    text-decoration: none;
 }
 
 .profile-pic-mobile>a  img{
@@ -58,4 +66,16 @@
 .top-menu-mobile .menu:hover{
     background: red;
     cursor: pointer;
+}
+
+.menudrop-content{
+    width:300px;
+    height: 100%;
+    background: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.outer{
+    background: transparent;
+    width: 37%;
+    height: 100%;
 }
