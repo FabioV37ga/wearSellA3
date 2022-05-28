@@ -1,0 +1,109 @@
+/* 
+    Esse arquivo controla o dropmenu da versão mobile.
+    Faz ele aparecer, coloca animações, etc...
+*/
+
+.menudrop-mobile {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+
+    height: 100%;
+    width: 100%;
+
+    background: transparent;
+    margin-left: -20px;
+    margin-top: -43px;
+
+    display: flex;
+
+}
+
+.active {
+    visibility: visible !important;
+    opacity: 100% !important;
+    animation: show-menu-mobile .4s;
+}
+
+.disable{
+    animation: close-menu-mobile .4s;
+}
+
+.top-menu-mobile .menu {
+    background: transparent;
+    border: 0;
+}
+
+.top-menu-mobile .menu:hover {
+    background: red;
+    cursor: pointer;
+}
+
+.menudrop-content {
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.outer {
+    background: transparent;
+    width: calc(100% - 300px);
+    height: 100%;
+}
+
+.profile-mobile {
+    background: black;
+    height: 54px;
+    display: flex;
+}
+
+.profile-mobile img {
+    position: absolute;
+    width: 50px !important
+}
+
+.profile-pic-mobile>a img {
+    margin-left: 10px !important
+}
+
+.profile-pic-mobile {
+    width: 50px;
+}
+
+.profile-text,
+.profile-text * {
+    color: white;
+    text-decoration: none;
+}
+
+.profile-text {
+    margin: auto 15px;
+}
+
+.profile-text a{
+    font-weight: bolder !important;
+}
+
+@keyframes show-menu-mobile {
+    0%{
+        transform: translateX(-40px);
+        opacity: 0%;
+    }
+    110%{
+        transform: translateX(0px);
+        opacity: 100%;
+    }
+}
+
+@keyframes close-menu-mobile {
+    0%{
+        transform: translateX(0px);
+        opacity: 100%;
+    }
+    100%{
+        transform: translateX(-40px);
+        opacity: 0%;
+    }
+}
