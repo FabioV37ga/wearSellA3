@@ -25,6 +25,8 @@
 
 .break {
     flex-basis: 100%;
+    height: 1px;
+    background: rgb(14, 14, 14);
 }
 
 .arrd {

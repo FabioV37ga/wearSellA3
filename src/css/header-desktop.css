@@ -16,6 +16,10 @@
     font-weight: bolder;
 }
 
+.navigation-button div{
+    margin: 0 auto;
+}
+
 .navigation-button:hover {
     transition: .2s;
     background: rgb(14, 14, 14);
@@ -23,7 +27,7 @@
 }
 
 .nav-list li:nth-child(4) .navigation-button {
-    width: 167px;
+    width: 135px;
 }
 
 .nav-list {
