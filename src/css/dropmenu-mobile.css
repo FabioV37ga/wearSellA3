@@ -22,7 +22,7 @@
     animation: show-menu-mobile .4s;
 }
 
-.disable{
+.disable {
     animation: close-menu-mobile .4s;
 }
 
@@ -74,34 +74,80 @@
 .profile-text * {
     color: white;
     text-decoration: none;
+    font-family: 'Roboto Condensed';
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Comfortaa', cursive;
 }
 
 .profile-text {
     margin: 9px 15px;
 }
 
-.profile-text a{
+.profile-text a {
     font-weight: bolder !important;
 }
 
 @keyframes show-menu-mobile {
-    0%{
-        transform: translateX(-40px);
+    0% {
+        transform: translateX(-200px);
         opacity: 0%;
     }
-    110%{
+
+    110% {
         transform: translateX(0px);
         opacity: 100%;
     }
 }
 
 @keyframes close-menu-mobile {
-    0%{
+    0% {
         transform: translateX(0px);
         opacity: 100%;
     }
-    100%{
-        transform: translateX(-40px);
+
+    100% {
+        transform: translateX(-200px);
         opacity: 0%;
     }
+}
+
+/* Parte de dentro */
+
+.menudrop-mobile-nav,
+.mobile-nav-item,
+.mobile-nav-item a {
+    display: flex;
+}
+
+.menudrop-mobile-nav {
+    /* background: lime; */
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 0;
+}
+
+.mobile-nav-item {
+    /* background: pink; */
+    list-style: none;
+    padding: 0 18px;
+    align-items: center;
+    border-bottom: .8px solid rgba(14, 14, 14, 0.1);
+}
+
+.mobile-nav-item a:nth-child(1) {
+    height: 40px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+
+}
+
+.mobile-nav-item a:nth-child(2) {
+    /* background: lavender; */
+    text-decoration: none;
+    padding: 5px;
 }
