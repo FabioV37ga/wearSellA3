@@ -123,7 +123,7 @@ function animateExtend(tipo, alvo) {
     const itemExtend = document.querySelectorAll(".item-extend");
 
     // Define a altura maxima que o alvo deve atingir.
-    var extend_height = (alvo.children.length * 40) + 1;
+    var extend_height = (alvo.children.length * 40);
 
     // Executa função anima().
     anima(alvo)
@@ -149,10 +149,9 @@ function animateExtend(tipo, alvo) {
                     // Enquando a altura atual for menor que a altura desejada...
                     if (actual_height <= extend_height) {
                         BLOCK_INDEX = 1;
-                        // Adicione +1 para altura atual a cada .1ms.
+                        // Adicione +2 para altura atual a cada .1ms.
                         target.style.height = `${actual_height}px`
-                        actual_height++;
-
+                        actual_height+= 2;
                         // Quando a altura atual for igual a desejada:
                     } else {
                         // Remove timer.
@@ -173,9 +172,9 @@ function animateExtend(tipo, alvo) {
                     // Enquanto a altura atual for maior que 0...
                     if (actual_height >= 0) {
 
-                        // Remova 1px para altura atual a cada 3ms.
+                        // Remova 2px para altura atual a cada 3ms.
                         target.style.height = `${actual_height}px`
-                        actual_height--;
+                        actual_height-= 2;
                         BLOCK_INDEX = 1;
 
                         // Quando a altura atual for igual a 0...
