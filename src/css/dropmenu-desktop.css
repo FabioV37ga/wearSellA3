@@ -18,7 +18,6 @@
 
 .dropmenu:hover,
 .nav-list--item>a:hover~.dropmenu {
-    /* transition: all 1s ease-in-out 1s; */
     animation: show-menu .4s;
     opacity: 100%;
     visibility: visible;

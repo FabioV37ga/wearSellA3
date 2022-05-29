@@ -89,7 +89,7 @@ function dropmenuCloseAnimation() {
             if (arrowsMobile[i].children[1].children[0].classList.contains("fa-angle-down")) {
 
                 // (OPEN) No click da seta, troca a arrowUP p/ arrowDown.
-                if (BLOCK_INDEX == 0){
+                if (EXTEND_STATE == 0){
                     arrowsMobile[i].children[1].children[0].classList.remove("fa-angle-down")
                     arrowsMobile[i].children[1].children[0].classList.add("fa-angle-up")
                     animateExtend(1, arrowsMobile[i].children[2])
@@ -99,7 +99,7 @@ function dropmenuCloseAnimation() {
             } else if (arrowsMobile[i].children[1].children[0].classList.contains("fa-angle-up")) {
 
                 // (CLOSE) No click da seta, troca a arrowDown p/ arrowUP.
-                if (BLOCK_INDEX == 0){
+                if (EXTEND_STATE == 0){
                 arrowsMobile[i].children[1].children[0].classList.add("fa-angle-down")
                 arrowsMobile[i].children[1].children[0].classList.remove("fa-angle-up")
                 animateExtend(2, arrowsMobile[i].children[2])
@@ -114,13 +114,13 @@ function dropmenuCloseAnimation() {
 
 
 // Variavel global, serve para bloquear o click das setas enquanto a animação estiver ocorrendo, evita bugs.
-var BLOCK_INDEX = 0;
+// 0 = Não existem animações acontecendo no momento, libera uso de botoes;
+// 1 = Existem animações ocorrendo no momento, tranca uso de botoes;
+var EXTEND_STATE = 0;
 
 // Essa função controla as animações do extend mobile.
 // 4 --- function animateExtent() --- 4 //
 function animateExtend(tipo, alvo) {
-    // [HTML / Element] .mobile-nav-item
-    const itemExtend = document.querySelectorAll(".item-extend");
 
     // Define a altura maxima que o alvo deve atingir.
     var extend_height = (alvo.children.length * 40);
@@ -148,7 +148,7 @@ function animateExtend(tipo, alvo) {
 
                     // Enquando a altura atual for menor que a altura desejada...
                     if (actual_height <= extend_height) {
-                        BLOCK_INDEX = 1;
+                        EXTEND_STATE = 1;
                         // Adicione +2 para altura atual a cada .1ms.
                         target.style.height = `${actual_height}px`
                         actual_height+= 2;
@@ -156,7 +156,7 @@ function animateExtend(tipo, alvo) {
                     } else {
                         // Remove timer.
                         clearInterval(timer);
-                        BLOCK_INDEX = 0;
+                        EXTEND_STATE = 0;
                     }
                 }, .1)
                 break;
@@ -175,7 +175,7 @@ function animateExtend(tipo, alvo) {
                         // Remova 2px para altura atual a cada 3ms.
                         target.style.height = `${actual_height}px`
                         actual_height-= 2;
-                        BLOCK_INDEX = 1;
+                        EXTEND_STATE = 1;
 
                         // Quando a altura atual for igual a 0...
                         if (actual_height == 0) {
@@ -187,7 +187,7 @@ function animateExtend(tipo, alvo) {
                     } else {
                         // Remove timer.
                         clearInterval(timer);
-                        BLOCK_INDEX = 0;
+                        EXTEND_STATE = 0;
                     }
                 }, 3)
                 break;
