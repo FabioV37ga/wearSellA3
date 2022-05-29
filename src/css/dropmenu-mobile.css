@@ -179,7 +179,7 @@
 .extend {
     /* animation: openHeight .5s !important;
     height: 121px; */
-    height: 100%;
+    /* height: 100%; */
     opacity: 100% !important;
     visibility: visible !important;
 }
