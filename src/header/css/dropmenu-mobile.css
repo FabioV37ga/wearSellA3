@@ -57,13 +57,13 @@
 
 .profile-mobile img {
     position: absolute;
-    width: 50px !important
+    width: 46px !important;
 }
 
 
-.profile-pic-mobile>a img {
-    margin-left: 10px !important;
-    margin-top: 3px
+.profile-pic-mobile>a img {   
+    margin-left: 17px !important;
+    margin-top: 5px;
 }
 
 .profile-pic-mobile {
@@ -74,17 +74,23 @@
 .profile-text * {
     color: white;
     text-decoration: none;
-    font-family: 'Roboto Condensed';
+    /* font-family: 'Roboto Condensed';
     font-family: 'Bebas Neue', cursive;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Comfortaa', cursive; */
 }
 
 .profile-text {
     margin: 12px 15px;
+    font-size: 14px;
 }
 
-.profile-text a {
-    font-weight: bolder !important;
+.profile-text a:nth-child(1){
+    font-weight: bolder;
+}
+
+.profile-text span, .profile-mobile span *{
+    font-size: 13px;
+    font-weight: 100 !important;
 }
 
 @keyframes show-menu-mobile {
