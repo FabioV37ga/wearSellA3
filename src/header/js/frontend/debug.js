@@ -17,13 +17,35 @@
 
 
 
-// IIFE trocaHrefLocal()
-(function(){
+toggleLocal()
+function toggleLocal(){
 
-    // Var local: 
-    // 0 - Modo local desativa, não há alteração de codigo
-    // 1 - Modo local ativado, algumas hrefs são alteradas
-    var local = 1;
+    // Botoes temporarios p/ alternar entre git e local
+    var parent = document.querySelectorAll(".dropmenu-wrap");
+    var on = parent[3].children[2].children[0].children[0]
+    var off = parent[3].children[2].children[1].children[0]
 
-    
-})()
+    on.addEventListener("click", tOn);
+    off.addEventListener("click", tOff);
+
+    // Hrefs a serem trocados
+    var contaPerfilMobile = document.querySelector(".profile-pic-mobile").children[0]
+    var contaPerfilDesktop = document.querySelectorAll(".icon")[0].children[0]
+
+    // Array p/ facilitar
+    var contaPerfil = [contaPerfilMobile, contaPerfilDesktop];
+
+    function tOn(){
+        console.log("LOCALMODE: TRUE")
+        for (let i = 0; i <= contaPerfil.length-1; i++){
+            contaPerfil[i].href = "conta/perfil.html"
+        }
+    }
+
+    function tOff(){
+        console.log("LOCALMODE: OFF")
+        for (let i = 0; i <= contaPerfil.length-1; i++){
+            contaPerfil[i].href = "conta/perfil"
+        }
+    }
+}
