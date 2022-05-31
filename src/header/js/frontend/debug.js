@@ -15,8 +15,8 @@
 })()
 
 
-
-
+window.DEV_MODE = 0;
+// Function toggleLocal() é responsável por alterar entre o desenvolvimento local e git.
 toggleLocal()
 function toggleLocal(){
 
@@ -39,6 +39,7 @@ function toggleLocal(){
         console.log("LOCALMODE: TRUE")
         for (let i = 0; i <= contaPerfil.length-1; i++){
             contaPerfil[i].href = "conta/perfil.html"
+            window.DEV_MODE = 1
         }
     }
 
@@ -46,6 +47,7 @@ function toggleLocal(){
         console.log("LOCALMODE: OFF")
         for (let i = 0; i <= contaPerfil.length-1; i++){
             contaPerfil[i].href = "conta/perfil"
+            window.DEV_MODE = 0
         }
     }
 }

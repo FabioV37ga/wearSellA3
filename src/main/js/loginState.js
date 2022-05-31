@@ -15,7 +15,15 @@ window.LOGIN_STATE = 0;
 // IIFE checkAndRedirect()
 (function () {
     if (window.LOGIN_STATE == 0) {
-        console.log("Desconectado, redirecionando...")
-        window.open("login.html", "_self")
+        switch (window.DEV_MODE){
+            case 0:
+                console.log("Desconectado, redirecionando...")
+                window.open("login", "_self")
+                break;
+            case 1:
+                console.log("Desconectado, redirecionando...")
+                window.open("login.html", "_self")
+                break;
+        }
     }
 })()
