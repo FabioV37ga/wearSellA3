@@ -61,7 +61,7 @@
 }
 
 
-.profile-pic-mobile>a img {   
+.profile-pic-mobile>a img {
     margin-left: 17px !important;
     margin-top: 5px;
 }
@@ -84,11 +84,12 @@
     font-size: 14px;
 }
 
-.profile-text a:nth-child(1){
+.profile-text a:nth-child(1) {
     font-weight: bolder;
 }
 
-.profile-text span, .profile-mobile span *{
+.profile-text span,
+.profile-mobile span * {
     font-size: 13px;
     font-weight: 100 !important;
 }

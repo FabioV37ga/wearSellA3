@@ -1,0 +1,120 @@
+/* 
+    Esse arquivo controla a estilização da area de registro/login.
+*/
+
+.auth-container {
+    height: auto;
+    width: 333px;
+    margin: 10px auto;
+}
+
+.auth-head {
+    height: 33px
+}
+
+.auth-head h1 {
+    font-size: 22px
+}
+
+.auth-login,
+.auth-inside-head,
+.login-forget {
+    display: flex;
+    align-items: center;
+}
+
+
+.auth-login {
+    justify-content: center;
+    height: 340px;
+    width: 333px;
+    box-shadow: 0 1px 6px 3px rgb(181 181 181 / 15%);
+    border: 1px solid #ececec;
+    border-radius: 4px;
+}
+
+.auth-form {
+    width: 298px;
+    height: 298px;
+}
+
+fieldset {
+    margin: 0 auto;
+    border: 0;
+    padding: 0;
+    height: inherit;
+}
+
+.auth-inside-head {
+    margin: 0;
+    justify-content: flex-start;
+    height: 25px;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 5px;
+}
+
+.auth-inside-head img {
+    width: 15px;
+    margin-right: 10px;
+}
+
+.auth-inside-head h1 {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.login .label {
+    margin: 18px 0 8px 0;
+    font-size: 13px;
+    color: #313131;
+}
+
+.login input {
+    width: 99.18%;
+    padding: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.commit-button {
+    background: #8fce00;
+    margin-top: 10px;
+    border: 1px solid #8fce00;
+    border-radius: 4px;
+    padding: 5px 14px 4px;
+    box-shadow: 0px 2px 3px 0px rgb(203 203 203 / 50%);
+    line-height: 33px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 20%);
+}
+
+.commit-button:hover{
+    background: #9adb03;
+    border: 1px solid #9adb03;
+    cursor: pointer
+}
+
+.login-forget {
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 135px;
+}
+
+.login-forget:hover{
+    cursor: pointer;
+}
+
+.login-forget img {
+    width: 12px;
+    margin-bottom: 2.01px;
+}
+
+.login-forget p {
+    display: inline;
+    font-size: 14px;
+    color: #313131
+}

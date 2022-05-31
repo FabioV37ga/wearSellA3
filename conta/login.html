@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../src/header/css/dropmenu-mobile.css">
     <link rel="stylesheet" href="../src/header/css/header-desktop.css">
     <link rel="stylesheet" href="../src/header/css/dropmenu-desktop.css">
+    <link rel="stylesheet" href="../src/main/css/authArea.css">
 </head>
 
 <body>
@@ -43,7 +44,8 @@
                                 <div class="profile-mobile">
                                     <div class="profile-pic-mobile">
                                         <a href="conta/perfil">
-                                            <img src="../src/header/img/profile.svg" alt="Perfil" class="profile-desktop">
+                                            <img src="../src/header/img/profile.svg" alt="Perfil"
+                                                class="profile-desktop">
                                         </a>
                                     </div>
                                     <div class="profile-text">
@@ -313,12 +315,60 @@
 
     <main>
 
+        <!-- Container geral auth -->
+        <section class="auth-container">
+
+            <!-- Titulo do container auth -->
+            <div class="auth-head">
+                <h1>Identificação</h1>
+            </div>
+
+            <!-- Formulario login -->
+            <section class="auth-login">
+
+                <!-- LOGIN form -->
+                <form action="#" method="post" class="auth-form">
+                    <fieldset>
+
+                        <!-- LOGIN header -->
+                        <div class="auth-inside-head">
+                            <img src="../src/main/img/auth-pic.svg" alt="">
+                            <h1>Já sou cadastrado</h1>
+                        </div>
+
+                        <!-- LOGIN campo email -->
+                        <div class="login login-mail">
+                            <div class="label">E-mail:</div>
+                            <input type="text">
+                        </div>
+
+                        <!-- LOGIN campo senha -->
+                        <div class="login login-pass">
+                            <div class="label">Senha:</div>
+                            <input type="password">
+                        </div>
+
+                        <button class="commit-button">
+                            Prosseguir
+                        </button>
+
+                        <a class="login-forget">
+                            <img src="../src/main/img/forgot.svg" alt="">
+                            <p>Esqueceu a senha?</p>
+                        </a>
+
+                    </fieldset>
+                </form>
+
+            </section>
+
+
+        </section>
     </main>
 
     <script src="../src/header/js/frontend/dropmenu-mobile.js"></script>
     <script src="../src/header/js/frontend/debug.js"></script>
 
-    <script src="../src/main/js/loginState.js"></script>
     <!-- 29.05.22 - total: 1072 linhas,  3,46MB-->
 </body>
 
