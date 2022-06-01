@@ -29,24 +29,24 @@ function toggleLocal(){
     off.addEventListener("click", tOff);
 
     // Hrefs a serem trocados
-    var contaPerfilMobile = document.querySelector(".profile-pic-mobile").children[0]
-    var contaPerfilDesktop = document.querySelectorAll(".icon")[0].children[0]
+    var perfilIcoMobile = document.querySelector(".profile-pic-mobile").children[0]
+    var perfilIcoDesktop = document.querySelectorAll(".icon")[0].children[0]
 
     // Array p/ facilitar
-    var contaPerfil = [contaPerfilMobile, contaPerfilDesktop];
+    var perfilIcons = [perfilIcoMobile, perfilIcoDesktop];
 
     function tOn(){
         console.log("LOCALMODE: TRUE")
-        for (let i = 0; i <= contaPerfil.length-1; i++){
-            contaPerfil[i].href = "conta/perfil.html"
+        for (let i = 0; i <= perfilIcons.length-1; i++){
+            perfilIcons[i].href = "conta/perfil.html"
             window.DEV_MODE = 1
         }
     }
 
     function tOff(){
         console.log("LOCALMODE: OFF")
-        for (let i = 0; i <= contaPerfil.length-1; i++){
-            contaPerfil[i].href = "conta/perfil"
+        for (let i = 0; i <= perfilIcons.length-1; i++){
+            perfilIcons[i].href = "conta/perfil"
             window.DEV_MODE = 0
         }
     }

@@ -22,7 +22,8 @@ window.LOGIN_STATE = 0;
                 break;
             case 1:
                 console.log("Desconectado, redirecionando...")
-                window.open("login.html", "_self")
+                // window.open("login.html", "_self")
+                window.open("http://facebook.com", "_self")
                 break;
         }
     }

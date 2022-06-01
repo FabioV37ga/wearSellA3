@@ -321,10 +321,12 @@
             <!-- Titulo do container auth -->
             <div class="auth-head">
                 <h1>Identificação</h1>
+                <h2>Faça o seu login ou cria uma conta caso ainda não possua cadastro</h2>
             </div>
 
+            <div class="desktop-break"></div>
             <!-- Formulario login -->
-            <section class="auth-login">
+            <section class="auth login_">
 
                 <!-- LOGIN form -->
                 <form action="#" method="post" class="auth-form">
@@ -364,14 +366,49 @@
 
             </section>
 
+            <!-- Container geral register -->
+            <section class="auth register_">
+
+                <!-- REGISTER form -->
+                <form action="" class="auth-form_">
+                    <fieldset>
+
+                        <!-- REGISTER header -->
+                        <div class="auth-inside-head">
+                            <img src="../src/main/img/reg-pic.svg" alt="" class="reg-pic">
+                            <h1>Ainda não possuo cadastro</h1>
+                        </div>
+
+                        <!-- REGISTER campo email -->
+                        <div class="register register-mail">
+                            <div class="label">Digite o CPF que deseja cadastrar:</div>
+                            <input type="text">
+                        </div>
+
+                        <!-- REGISTER campo senha -->
+                        <div class="register register-pass">
+                            <div class="label">Digite a senha:</div>
+                            <input type="password">
+                        </div>
+
+                        <!-- REGISTER commit button -->
+                        <button class="commit-button">
+                            Cadastrar
+                        </button>
+
+                    </fieldset>
+                </form>
+            </section>
+
 
         </section>
     </main>
 
     <script src="../src/header/js/frontend/dropmenu-mobile.js"></script>
-    <script src="../src/header/js/frontend/debug.js"></script>
+    <!-- <script src="../src/header/js/frontend/debug.js"></script> -->
 
     <!-- 29.05.22 - total: 1072 linhas,  3,46MB-->
+    <!-- 01.06.22 - total: 1881 linhas,  4,28MB-->
 </body>
 
 </html>
