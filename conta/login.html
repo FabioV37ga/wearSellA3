@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WearSell | Perfil</title>
+    <title>WearSell | Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../src/base.css">
     <link rel="stylesheet" href="../src/header/css/header-mobile.css">
@@ -321,7 +321,7 @@
             <!-- Titulo do container auth -->
             <div class="auth-head">
                 <h1>Identificação</h1>
-                <h2>Faça o seu login ou cria uma conta caso ainda não possua cadastro</h2>
+                <h2>Faça o seu login ou crie uma conta caso ainda não possua cadastro</h2>
             </div>
 
             <div class="desktop-break"></div>
@@ -340,7 +340,7 @@
 
                         <!-- LOGIN campo email -->
                         <div class="login login-mail">
-                            <div class="label">E-mail:</div>
+                            <div class="label">CPF:</div>
                             <input type="text">
                         </div>
 
@@ -382,7 +382,7 @@
                         <!-- REGISTER campo email -->
                         <div class="register register-mail">
                             <div class="label">Digite o CPF que deseja cadastrar:</div>
-                            <input type="text">
+                            <input type="text" maxlength="14">
                         </div>
 
                         <!-- REGISTER campo senha -->
@@ -392,7 +392,7 @@
                         </div>
 
                         <!-- REGISTER commit button -->
-                        <button class="commit-button">
+                        <button class="commit-button" type="button">
                             Cadastrar
                         </button>
 
@@ -405,6 +405,7 @@
     </main>
 
     <script src="../src/header/js/frontend/dropmenu-mobile.js"></script>
+    <script src="../src/main/js/reg-mail.js"></script>
     <!-- <script src="../src/header/js/frontend/debug.js"></script> -->
 
     <!-- 29.05.22 - total: 1072 linhas,  3,46MB-->
