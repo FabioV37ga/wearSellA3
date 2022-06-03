@@ -6,6 +6,7 @@
         1 - IIFE formatCPF()
         2 - IIFE reformatCPF()
         3 - function TestaCPF()
+        4 - function transferInputs()
 */
 
 
@@ -13,6 +14,8 @@
 // [Element / HTML] Input do CPF (registro)
 const cpfField = document.querySelector(".register-mail").children[1];
 
+// [Element / HTML] Input da senha (registro)
+const passField = document.querySelector(".register-pass").children[1];
 // Essa IIFE é responsavel por formatar o display do CPF na tela, adicionando '.' e '-'
 // 1 -- IIFE formatCPF() -- 1
 (function () {
@@ -32,6 +35,7 @@ const cpfField = document.querySelector(".register-mail").children[1];
 
 
 
+
 // Essa IIFE é responsavel por remover quaisquer caracteres que atrapalhem na verificação do cpf
 // 2 -- IIFE reformatCPF() -- 2
 (function () {
@@ -41,23 +45,33 @@ const cpfField = document.querySelector(".register-mail").children[1];
     // Adiciona listener.click no botao.
     registerButton.addEventListener("click", regCommit);
 
-    // Essa sub-funcao remove espaços, pontos e hifens
-    function regCommit() {
-        var field = cpfField.value.replaceAll(" ", "");
-        field = field.replaceAll(".", "");
-        field = field.replaceAll("-", "");
+})();
 
-        console.log("CPF: " + field)
-        
-        // esse log retorna se o cpf é valido ou não.
-        if (TestaCPF(field) == true) {
-            console.log("ver")
+
+
+
+// Essa sub-funcao remove espaços, pontos e hifens
+function regCommit() {
+    var field = cpfField.value.replaceAll(" ", "");
+    field = field.replaceAll(".", "");
+    field = field.replaceAll("-", "");
+
+    console.log("CPF: " + field)
+
+    var password = document.querySelector(".register-pass").children[1]
+    // Controla o tamanho minimo da senha (7 caracteres)
+    if (TestaCPF(field) == true) {
+        if (password.value.length >= 7) {
+            window.localStorage.setItem('cpf', field)
+            window.localStorage.setItem('pass', passField.value)
         } else {
-            console.log("fal")
+            password.value = "";
+            password.value.length--;
+            password.placeholder = "Mínimo de 7 caracteres!"
         }
     }
+}
 
-})();
 
 
 
