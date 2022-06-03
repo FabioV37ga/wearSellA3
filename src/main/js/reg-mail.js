@@ -42,8 +42,17 @@ const passField = document.querySelector(".register-pass").children[1];
     // Botão final, commit.
     const registerButton = document.querySelectorAll(".commit-button")[1];
 
+    // Field senha
+    const registerPassField = document.querySelector(".register-pass").children[1]
+
     // Adiciona listener.click no botao.
     registerButton.addEventListener("click", regCommit);
+
+    registerPassField.addEventListener("keypress", function(e){
+        if (e.key == "Enter"){
+            regCommit()
+        }
+    });
 
 })();
 
