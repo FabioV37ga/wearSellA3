@@ -1,0 +1,36 @@
+.register-container{
+    /* background: red; */
+    height: auto;
+    width: 333px;
+    margin: 10px auto;
+}
+
+.auth {
+    justify-content: center;
+    box-shadow: 0 1px 6px 3px rgb(181 181 181 / 15%);
+    border: 1px solid #ececec;
+    border-radius: 4px;
+}
+
+.auth form{
+    height:396px !important;
+}
+
+.register_{
+    margin-top: 0 !important;
+    height: 430px !important;
+}
+
+.register .label{
+    align-items: center !important;
+    height: 22px;
+    margin: 18px 0 0 0 !important;
+}
+
+.register .label img{
+    width: 20px
+}
+
+.register .label p{
+    display: inline
+}

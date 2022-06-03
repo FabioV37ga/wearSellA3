@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../src/header/css/dropmenu-mobile.css">
     <link rel="stylesheet" href="../src/header/css/header-desktop.css">
     <link rel="stylesheet" href="../src/header/css/dropmenu-desktop.css">
+    <link rel="stylesheet" href="../src/main/css/register.css">
+    <link rel="stylesheet" href="../src/main/css/authArea.css">
 </head>
 
 <body>
@@ -313,6 +315,62 @@
     </header>
 
     <main>
+
+        <section class="register-container">
+
+            <div class="auth-head">
+                <h1>Identificação</h1>
+                <h2>Faça o seu login ou crie uma conta caso ainda não possua cadastro</h2>
+            </div>
+
+            <section class="auth register_">
+                <form action="#" method="post" class="auth-form">
+                    <fieldset>
+                        <!-- register header -->
+                        <div class="auth-inside-head">
+                            <img src="../src/main/img/auth-pic.svg" alt="">
+                            <h1>Dados para acesso   </h1>
+                        </div>
+
+                        <!-- register campo email -->
+                        <div class="register register-mail">
+                            
+                            <div class="label">
+                                <img src="../src/main/img/email-pic.svg" alt="">
+                                <p>E-mail:</p> 
+                            </div>
+                            <input type="text">
+                        </div>
+
+                        <!-- register campo email -->
+                        <div class="register register-CPF">
+                            <div class="label">CPF:</div>
+                            <input type="text">
+                        </div>
+
+                        <!-- register campo senha -->
+                        <div class="register register-pass">
+                            <div class="label">
+                                <img src="../src/main/img/forgot.svg" alt="">
+                                <div class="label">Crie uma senha:</div>
+                            </div>
+                            <input type="password">
+                        </div>
+
+                        <div class="register register-pass confirm">
+                            <div class="label">Confirmar senha:</div>
+                            <input type="password">
+                        </div>
+
+                        <!-- register commit button -->
+                        <button class="commit-button">
+                            Prosseguir
+                        </button>
+
+                    </fieldset>
+                </form>
+            </section>
+        </section>
 
     </main>
 
