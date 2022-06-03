@@ -64,6 +64,7 @@ function regCommit() {
         if (password.value.length >= 7) {
             window.localStorage.setItem('cpf', field)
             window.localStorage.setItem('pass', passField.value)
+            window.open("registrar", "_self")
         } else {
             password.value = "";
             password.value.length--;
