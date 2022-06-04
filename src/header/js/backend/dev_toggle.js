@@ -11,6 +11,8 @@
     switch(url.includes("github")){
         case true:
             console.log("DEV_OFF")
+            window.DEV_MODE = 0;
+            redirectTo("");
             break;
 
         case false:
@@ -20,8 +22,8 @@
             break; 
     }
     
-    function redirectTo(){
-        var ext = ".html";
+    function redirectTo(e){
+        var ext = e;
         console.log("+.html")
 
         var perfilMobile = document.querySelector(".profile-pic-mobile").children[0];
