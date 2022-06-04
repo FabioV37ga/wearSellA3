@@ -15,7 +15,7 @@
 })()
 
 
-window.DEV_MODE = 0;
+// window.DEV_MODE = 0;
 // Function toggleLocal() é responsável por alterar entre o desenvolvimento local e git.
 toggleLocal()
 function toggleLocal(){

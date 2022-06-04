@@ -15,16 +15,16 @@ window.LOGIN_STATE = 0;
 // IIFE checkAndRedirect()
 (function () {
     if (window.LOGIN_STATE == 0) {
-        // switch (window.DEV_MODE){
-        //     case 0:
+        switch (window.DEV_MODE){
+            case 0:
                 console.log("Desconectado, redirecionando...")
                 window.open("login", "_self")
-        //         break;
-        //     case 1:
-        //         console.log("Desconectado, redirecionando...")
-        //         // window.open("login.html", "_self")
-        //         window.open("http://facebook.com", "_self")
-        //         break;
-        // }
+                break;
+            case 1:
+                console.log("Desconectado, redirecionando...")
+                // window.open("login.html", "_self")
+                window.open("login.html", "_self")
+                break;
+        }
     }
 })()
