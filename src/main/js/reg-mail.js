@@ -18,7 +18,8 @@ const cpfField = document.querySelector(".register-mail").children[1];
 const passField = document.querySelector(".register-pass").children[1];
 // Essa IIFE é responsavel por formatar o display do CPF na tela, adicionando '.' e '-'
 // 1 -- IIFE formatCPF() -- 1
-(function () {
+formatCpf()
+function formatCpf(){
 
     // Adiciona listener keypress
     cpfField.addEventListener("keypress", () => {
@@ -31,7 +32,7 @@ const passField = document.querySelector(".register-pass").children[1];
             cpfField.value = cpfField.value + "-"
         }
     })
-})();
+}
 
 
 
@@ -65,12 +66,20 @@ function regCommit() {
     field = field.replaceAll(".", "");
     field = field.replaceAll("-", "");
 
+    var split = field.split("")
+
     console.log("CPF: " + field)
 
     var password = document.querySelector(".register-pass").children[1]
     // Controla o tamanho minimo da senha (7 caracteres)
     if (TestaCPF(field) == true) {
         if (password.value.length >= 7) {
+
+            var field = split[0] + "" + split[1] + "" +
+            split[2] + "." + split[3] + split[4] + split[5] +
+            "." + split[6] + split[7] + split[8] + "-"
+            + split[9] + split[10];
+   
             window.localStorage.setItem('cpf', field)
             window.localStorage.setItem('pass', passField.value)
             window.open("registrar", "_self")
@@ -107,3 +116,5 @@ function TestaCPF(strCPF) {
     if (Resto != parseInt(strCPF.substring(10, 11))) return false;
     return true;
 }
+
+
