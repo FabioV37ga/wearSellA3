@@ -24,7 +24,7 @@
 
     function redirectTo(e) {
         var ext = e;
-        console.log("+.html")
+        // console.log("+.html")
 
         var perfilMobile = document.querySelector(".profile-pic-mobile").children[0];
         var loginMobile = document.querySelector(".profile-text").children[0];
@@ -35,7 +35,7 @@
         
         var elements = [perfilMobile, loginMobile, perfilDesktop, loginDesktop, loginDesktop_1]
         
-        console.log(elements)
+        // console.log(elements)
         
         for (let i = 0; i <= elements.length - 1; i++) {
             var elemento = elements[i];
@@ -43,7 +43,7 @@
         }
         
         var cadastrar = document.querySelectorAll(".icon")[1].children[1].children[0];
-        
+
     }
 
 })()
