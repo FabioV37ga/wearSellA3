@@ -4,11 +4,11 @@
 
 
 
-(function(){
-    
+(function () {
+
     const url = document.URL.toString();
 
-    switch(url.includes("github")){
+    switch (url.includes("github")) {
         case true:
             console.log("DEV_OFF")
             window.DEV_MODE = 0;
@@ -19,10 +19,10 @@
             console.log("DEV_ON")
             window.DEV_MODE = 1;
             redirectTo(".html")
-            break; 
+            break;
     }
-    
-    function redirectTo(e){
+
+    function redirectTo(e) {
         var ext = e;
         console.log("+.html")
 
@@ -32,14 +32,18 @@
         var loginDesktop = document.querySelectorAll(".icon")[0].children[1].children[0];
         var loginDesktop_1 = document.querySelectorAll(".icon")[0].children[1].children[2];
 
-        var elements = [perfilMobile,loginMobile,perfilDesktop,loginDesktop,loginDesktop_1]
-
+        
+        var elements = [perfilMobile, loginMobile, perfilDesktop, loginDesktop, loginDesktop_1]
+        
         console.log(elements)
-
-        for (let i = 0; i <= elements.length-1; i++){
+        
+        for (let i = 0; i <= elements.length - 1; i++) {
             var elemento = elements[i];
             elemento.href = elemento.href + ext
         }
+        
+        var cadastrar = document.querySelectorAll(".icon")[1].children[1].children[0];
+        
     }
-    
+
 })()

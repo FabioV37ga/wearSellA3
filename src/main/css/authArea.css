@@ -124,7 +124,7 @@ fieldset {
 }
 
 .register_ {
-    margin-top: 18px;
+    margin: 18px auto 0;
     height: 300px;
     width: 333px;
 }

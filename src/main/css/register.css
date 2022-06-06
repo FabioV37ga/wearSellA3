@@ -13,7 +13,7 @@
 }
 
 .auth form{
-    height:396px !important;
+    height:90% !important;
 }
 
 .register_{
@@ -41,4 +41,5 @@
 
 .register-pass .label{
     display: flex;
+    margin-top: 12px;
 }

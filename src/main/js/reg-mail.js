@@ -82,7 +82,16 @@ function regCommit() {
    
             window.localStorage.setItem('cpf', field)
             window.localStorage.setItem('pass', passField.value)
-            window.open("registrar", "_self")
+            
+            switch (window.DEV_MODE){
+                case 0:
+                    window.open("registrar", "_self")
+                    break;
+                case 1:
+                    window.open("registrar.html","_self")
+                    break;
+            }
+            
         } else {
             password.value = "";
             password.value.length--;
