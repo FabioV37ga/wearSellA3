@@ -19,7 +19,7 @@ const passField = document.querySelector(".register-pass").children[1];
 // Essa IIFE é responsavel por formatar o display do CPF na tela, adicionando '.' e '-'
 // 1 -- IIFE formatCPF() -- 1
 formatCpf()
-function formatCpf(){
+function formatCpf() {
 
     // Adiciona listener keypress
     cpfField.addEventListener("keypress", () => {
@@ -42,18 +42,18 @@ function formatCpf(){
 (function () {
     // Botão final, commit.
     const registerButton = document.querySelectorAll(".commit-button")[1];
-    
+
     const buttons = document.querySelectorAll(".-final");
 
     for (let i = 0; i <= buttons.length - 1; i++) {
         // Field senha
         const registerPassField = document.querySelector(".register-pass").children[1]
-    
+
         // Adiciona listener.click no botao.
         buttons[i].addEventListener("click", regCommit);
-    
-        registerPassField.addEventListener("keypress", function(e){
-            if (e.key == "Enter"){
+
+        registerPassField.addEventListener("keypress", function (e) {
+            if (e.key == "Enter") {
                 regCommit()
             }
         });
@@ -80,23 +80,23 @@ function regCommit() {
         if (password.value.length >= 7) {
 
             var field = split[0] + "" + split[1] + "" +
-            split[2] + "." + split[3] + split[4] + split[5] +
-            "." + split[6] + split[7] + split[8] + "-"
-            + split[9] + split[10];
-   
+                split[2] + "." + split[3] + split[4] + split[5] +
+                "." + split[6] + split[7] + split[8] + "-"
+                + split[9] + split[10];
+
             window.localStorage.setItem('cpf', field)
             window.localStorage.setItem('pass', passField.value)
-            
-            switch (window.DEV_MODE){
+
+            switch (window.DEV_MODE) {
                 case 0:
                     window.open("registrar", "_self")
                     break;
                 case 1:
-                    window.open("registrar.html","_self")
+                    window.open("registrar.html", "_self")
                     break;
             }
-            
-        } 
+
+        }
     }
 }
 

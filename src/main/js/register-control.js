@@ -248,10 +248,9 @@ var pessoal = 0;
                         (ano >= 1900)) {
 
                         var atual = new Date()
-                        if (atual.getFullYear() - ano >= 18) {
+                        if (atual.getFullYear() - ano == 18) {
 
                             if (atual.getMonth() + 1 == mes) {
-                                console.log("aqui")
                                 if (atual.getDate() >= dia) {
                                     // 18 literal
                                     dateValid = 1;
@@ -266,10 +265,16 @@ var pessoal = 0;
                                 // 17
                                 dateValid = 0;
                             }
-                        } else {
+                        } else if (atual.getFullYear() - ano < 18) {
                             // menor de idade
                             dateValid = 0;
+                        } else {
+                            dateValid = 1;
                         }
+                    } else {
+                        // input invalido
+                        console.log(dia + "/" + mes + "/" + ano)
+                        dateValid = 0;
                     }
                 }
             }

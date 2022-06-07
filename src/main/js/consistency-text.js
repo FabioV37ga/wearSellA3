@@ -186,6 +186,66 @@ target: 1.  'login.html'
                     }
                 }
             }
+
+
+
+            // Consistencia Data de Nascimento
+            {//
+                // [HTML / Element] input - campo data de nascimento
+                const dataField = document.querySelector(".register-DNS").children[1]
+
+                var dia = dataField.value.split("/")[0];
+                var mes = dataField.value.split("/")[1];
+                var ano = dataField.value.split("/")[2];
+
+                if ((dia > 0 && dia <= 31) &&
+                    (mes > 0 && mes <= 12) &&
+                    (ano >= 1900)) {
+
+                    var atual = new Date()
+                    if (atual.getFullYear() - ano == 18) {
+
+                        if (atual.getMonth() + 1 == mes) {
+
+                            if (atual.getDate() >= dia) {
+                                // 18 literal
+                                dataField.style.border = "1px solid #ccc"
+                                dataField.placeholder = "dd/mm/aaaa"
+
+                            } else {
+                                // 17
+                                dataField.value = ""
+                                dataField.length--
+                                dataField.placeholder = "Menor de idade."
+                                dataField.style.border = "1px solid red"
+                            }
+                        } else if (atual.getMonth() + 1 > mes) {
+                            // 18 literal
+                            dataField.style.border = "1px solid #ccc"
+                            dataField.placeholder = "dd/mm/aaaa"
+
+                        } else {
+                            // 17
+                            dataField.value = ""
+                            dataField.length--
+                            dataField.placeholder = "Menor de idade."
+                            dataField.style.border = "1px solid red"
+                        }
+                    } else if (atual.getFullYear() - ano < 18) {
+                        // menor de idade
+                        dataField.value = ""
+                        dataField.length--
+                        dataField.placeholder = "Menor de idade."
+                        dataField.style.border = "1px solid red"
+                    } else {
+                        dataField.style.border = "1px solid #ccc"
+                        dataField.placeholder = "dd/mm/aaaa"
+                    }
+                } else {
+                    // input invalido
+                    dataField.style.border = "1px solid red"
+                }
+            }
         }
     }
 })()
