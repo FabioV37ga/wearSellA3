@@ -41,8 +41,8 @@ var pessoal = 0;
     const confirm = document.querySelector(".confirm").children[1];
 
     // Adiciona evento click no botão 
-    confirm.addEventListener("keypress", function(e){
-        switch (e.key){
+    confirm.addEventListener("keypress", function (e) {
+        switch (e.key) {
             case "Enter": commit();
         }
     })
@@ -137,8 +137,7 @@ var pessoal = 0;
             passValid = 0;
         }
 
-
-
+        
         // Função final da primeira sessão, retorna se todos os campos da sessão estão preenchidos corretamente
         // 0 : false
         // 1 : true;
@@ -146,7 +145,8 @@ var pessoal = 0;
             // -> PROSSEGUIR AQUI <-
             // .
             // .
-            document.getElementById('sect2').scrollIntoView();
+            document.querySelector("#sect2").scrollIntoView({behavior: 'smooth'});
+            pessoal = 1;
         } else {
             pessoal = 0;
         }
@@ -157,7 +157,8 @@ var pessoal = 0;
         * CPF: ${cpfValid} \n
         * Senha: ${passValid} \n`)
     }
-})()
+})();
+
 
 
 // [Element / HTML] Input do CPF (registro)
@@ -165,10 +166,10 @@ const cpfField = document.querySelector(".register-CPF").children[1];
 
 // [Element / HTML] Input da senha (registro)
 const passField = document.querySelector(".register-pass").children[1];
+
 // Essa IIFE é responsavel por formatar o display do CPF na tela, adicionando '.' e '-'
 // 1 -- IIFE formatCPF() -- 1
-
-function formatCpf() {
+(function () {
 
     // Adiciona listener keypress
     cpfField.addEventListener("keypress", () => {
@@ -180,8 +181,7 @@ function formatCpf() {
             cpfField.value = cpfField.value + "-"
         }
     })
-}
-formatCpf()
+})()
 
 
 

@@ -1,0 +1,4 @@
+TODO:
+06.06_1 - informar cpf invalido em 'index.html' e 'registrar.html'.
+06.06_2 - informar e-mail invalido em 'registrar.html'.
+06.06_3 - informar senha invalida em 'registrar.html'.
