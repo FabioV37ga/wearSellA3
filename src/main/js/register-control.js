@@ -146,7 +146,7 @@ var pessoal = 0;
             // -> PROSSEGUIR AQUI <-
             // .
             // .
-            document.getElementById('commit_2').scrollIntoView();
+            document.getElementById('sect2').scrollIntoView();
         } else {
             pessoal = 0;
         }

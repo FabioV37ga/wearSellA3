@@ -315,134 +315,137 @@
     </header>
 
     <main>
-
-        <section class="register-container">
-
+        <section class="main-container">
             <div class="auth-head">
                 <h1>Identificação</h1>
             </div>
+            <div class="register-break"></div>
+            <section class="register-container">
 
-            <section class="auth register_">
+                
+                <section class="auth register_">
+                    <form action="#" method="post" class="auth-form">
+                        <fieldset>
+                            <!-- register header -->
+                            <div class="auth-inside-head">
+                                <img src="../src/main/img/auth-pic.svg" alt="">
+                                <h1>Dados para acesso   </h1>
+                            </div>
+
+                            <!-- register campo email -->
+                            <div class="register register-mail">
+                                
+                                <div class="label">
+                                    <img src="../src/main/img/email-pic.svg" alt="">
+                                    <p>E-mail:</p> 
+                                </div>
+                                <input type="text">
+                            </div>
+
+                            <!-- register campo email -->
+                            <div class="register register-CPF">
+                                <div class="label">CPF:</div>
+                                <input type="text">
+                            </div>
+
+                            <!-- register campo senha -->
+                            <div class="register register-pass">
+                                <div class="label">
+                                    <img src="../src/main/img/forgot.svg" alt="">
+                                    <div class="label">Crie uma senha:</div>
+                                </div>
+                                <input type="password">
+                            </div>
+
+                            <div class="register register-pass confirm">
+                                <div class="label">Confirmar senha:</div>
+                                <input type="password">
+                            </div>
+
+                            <!-- register commit button -->
+                            <button class="commit-button" type="button">
+                                Prosseguir
+                            </button>
+
+                        </fieldset>
+                    </form>
+                </section>
+            </section>
+
+            <section class="auth address_ register_">
                 <form action="#" method="post" class="auth-form">
                     <fieldset>
                         <!-- register header -->
                         <div class="auth-inside-head">
                             <img src="../src/main/img/auth-pic.svg" alt="">
-                            <h1>Dados para acesso   </h1>
+                            <h1 id="sect2">Dados pessoais   </h1>
                         </div>
 
-                        <!-- register campo email -->
-                        <div class="register register-mail">
+                        <!-- register campo nome -->
+                        <div class="register register-name">
                             
                             <div class="label">
-                                <img src="../src/main/img/email-pic.svg" alt="">
-                                <p>E-mail:</p> 
+                                <p>Nome completo:</p> 
                             </div>
                             <input type="text">
                         </div>
 
-                        <!-- register campo email -->
+                        <!-- register campo CPF -->
                         <div class="register register-CPF">
-                            <div class="label">CPF:</div>
+                            <div class="label">Data de nascimento:</div>
+                            <input type="text" placeholder="dd/mm/aaaa">
+                        </div>
+
+                        <div class="register-break"></div>
+
+                        <!-- register campo CEP -->
+                        <div class="register register-CEP">
+                            <div class="label">
+                                <div class="label">CEP</div>
+                            </div>
                             <input type="text">
                         </div>
-
-                        <!-- register campo senha -->
-                        <div class="register register-pass">
-                            <div class="label">
-                                <img src="../src/main/img/forgot.svg" alt="">
-                                <div class="label">Crie uma senha:</div>
-                            </div>
-                            <input type="password">
+                        
+                        <!-- register campo endereço -->
+                        <div class="register register-address">
+                            <div class="label">Endereço:</div>
+                            <input type="text">
+                        </div>                    
+                        
+                        <!-- register campo endereço - numero -->
+                        <div class="register register-numero">
+                            <div class="label">Número:</div>
+                            <input type="text" class="short-input">
                         </div>
 
-                        <div class="register register-pass confirm">
-                            <div class="label">Confirmar senha:</div>
-                            <input type="password">
+                        <!-- register campo endereço - complemento -->
+                        <div class="register register-complemento">
+                            <div class="label">Complemento:</div>
+                            <input type="text" class="short-input">
+                        </div>
+
+                        <!-- register campo bairro -->
+                        <div class="register register-cidade">
+                            <div class="label">Cidade:</div>
+                            <input type="text" class="short-input">
+                        </div>
+
+                        <!-- register campo Estado-->
+                        <div class="register register-complemento">
+                            <div class="label">Estado:</div>
+                            <input type="text" class="short-input">
                         </div>
 
                         <!-- register commit button -->
-                        <button class="commit-button" type="button">
-                            Prosseguir
+                        <button class="commit-button" type="button" id="commit_2">
+                            Cadastrar
                         </button>
 
                     </fieldset>
                 </form>
             </section>
         </section>
-
-        <section class="auth register_">
-            <form action="#" method="post" class="auth-form">
-                <fieldset>
-                    <!-- register header -->
-                    <div class="auth-inside-head">
-                        <img src="../src/main/img/auth-pic.svg" alt="">
-                        <h1>Dados pessoais   </h1>
-                    </div>
-
-                    <!-- register campo nome -->
-                    <div class="register register-name">
-                        
-                        <div class="label">
-                            <p>Nome completo:</p> 
-                        </div>
-                        <input type="text">
-                    </div>
-
-                    <!-- register campo CPF -->
-                    <div class="register register-CPF">
-                        <div class="label">Data de nascimento:</div>
-                        <input type="text" placeholder="dd/mm/aaaa">
-                    </div>
-
-                    <!-- register campo CEP -->
-                    <div class="register register-CEP">
-                        <div class="label">
-                            <div class="label">CEP</div>
-                        </div>
-                        <input type="text">
-                    </div>
-                    
-                    <!-- register campo endereço -->
-                    <div class="register register-address">
-                        <div class="label">Endereço:</div>
-                        <input type="text">
-                    </div>                    
-                    
-                    <!-- register campo endereço - numero -->
-                    <div class="register register-numero">
-                        <div class="label">Número:</div>
-                        <input type="text" class="short-input">
-                    </div>
-
-                    <!-- register campo endereço - complemento -->
-                    <div class="register register-complemento">
-                        <div class="label">Complemento:</div>
-                        <input type="text" class="short-input">
-                    </div>
-
-                    <!-- register campo bairro -->
-                    <div class="register register-cidade">
-                        <div class="label">Cidade:</div>
-                        <input type="text" class="short-input">
-                    </div>
-
-                    <!-- register campo Estado-->
-                    <div class="register register-complemento">
-                        <div class="label">Estado:</div>
-                        <input type="text" class="short-input">
-                    </div>
-
-                    <!-- register commit button -->
-                    <button class="commit-button" type="button" id="commit_2">
-                        Cadastrar
-                    </button>
-
-                </fieldset>
-            </form>
-        </section>
     </section>
-
     </main>
 
     <script src="../src/header/js/backend/dev_toggle.js"></script>
