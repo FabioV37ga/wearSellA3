@@ -18,8 +18,6 @@ target: 1.  'login.html'
 
     function commit() {
 
-        console.log("commit.click")
-
         // Primeira sessão
         {
             { // Sessão CPF

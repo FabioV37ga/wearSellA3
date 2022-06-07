@@ -48,7 +48,12 @@ var pessoal = 0;
 */
 (function () {
 
-    const button = document.querySelector(".commit-button");
+    const buttons = document.querySelectorAll(".-final");
+
+    for (let i = 0; i <= buttons.length - 1; i++) {
+        buttons[i].addEventListener('click', () => { commit() })
+    }
+
     const campoMail = document.querySelector(".register-mail").children[1];
     const confirm = document.querySelector(".confirm").children[1];
 
@@ -58,7 +63,6 @@ var pessoal = 0;
             case "Enter": commit();
         }
     })
-    button.addEventListener("click", commit);
 
     function commit() {
 
@@ -77,7 +81,6 @@ var pessoal = 0;
                 if (texto_split[i] == "@") {
                     if (i > 3) {
                         mailValid = 1;
-
                         arroba++;
                         if (arroba > 1) {
                             mailValid = 0;
@@ -181,7 +184,7 @@ var pessoal = 0;
 
         // Segunda sessão
         if (document.URL.toString().includes("registrar")) {
-
+            
             // Variaveis para controlar se a condicao dos campos é verdadeira ou falsa:
             var nameValid = 0;
             var dateValid = 0;
@@ -236,12 +239,44 @@ var pessoal = 0;
                     // [HTML / Element] input - campo data de nascimento
                     const dataField = document.querySelector(".register-DNS").children[1]
 
+                    var dia = dataField.value.split("/")[0];
+                    var mes = dataField.value.split("/")[1];
+                    var ano = dataField.value.split("/")[2];
 
+                    if ((dia > 0 && dia <= 31) &&
+                        (mes > 0 && mes <= 12) &&
+                        (ano >= 1900)){
+
+                            var atual = new Date()
+                            if (atual.getFullYear() - ano >= 18){
+
+                                if (atual.getMonth()+1 == mes){
+                                    console.log("aqui")
+                                    if (atual.getDate() >= dia){
+                                        // 18 literal
+                                        dateValid = 1;
+                                    }else{
+                                        // 17
+                                        dateValid = 0;
+                                    }
+                                }else if (atual.getMonth()+1 > mes){
+                                    // 18 literal
+                                    dateValid = 1;
+                                }else{
+                                    // 17
+                                    dateValid = 0;
+                                }
+                            }else{
+                                // menor de idade
+                                dateValid = 0;
+                            }
+                        }
                 }
             }
             console.log(`
             CONSISTENCIA DE CAMPOS - 2ª SESSÃO \n
-            * Nome: ${nameValid} \n`)
+            * Nome: ${nameValid} \n
+            * Data de Nascimento: ${dateValid}\n`)
         }
     }
 })();
@@ -281,13 +316,9 @@ const passField = document.querySelector(".register-pass").children[1];
         dataField.addEventListener("keypress", () => {
             dataLeng = dataField.value.toString().length;
             // adiciona o caractere '-' na quinta posição do cep
-            if (dataLeng == 5){
-                dataField.value = dataField.value + "-";
+            if (dataLeng == 2 || dataLeng == 5){
+                dataField.value = dataField.value + "/";
             }
         })
     }
-
 })()
-
-
-
