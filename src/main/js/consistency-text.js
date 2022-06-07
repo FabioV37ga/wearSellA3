@@ -12,13 +12,13 @@ target: 1.  'login.html'
     const buttons = document.querySelectorAll(".-final");
 
     for (let i = 0; i <= buttons.length - 1; i++) {
-        buttons[i].addEventListener('click', commit)
+        buttons[i].addEventListener('click', () => { commit() })
     }
 
 
     function commit() {
 
-
+        console.log("commit.click")
 
         // Primeira sessão
         {
@@ -128,6 +128,11 @@ target: 1.  'login.html'
         }
 
 
+
+
+
+
+
         // Segunda sessão
         if (document.URL.toString().includes("registrar")) {
 
@@ -161,8 +166,6 @@ target: 1.  'login.html'
                         texto.split("")[i] == "8" ||
                         texto.split("")[i] == "9") {
                         // Existem numeros.
-                        // .
-                        // .
                         // Erro: Possui numeros
                         nomeCompleto.value = null
                         nomeCompleto.placeholder = "Não pode haver números!"
@@ -170,9 +173,6 @@ target: 1.  'login.html'
                         break;
                     } else {
                         // Nao existem numeros.
-                        // .
-                        // .
-
                         // Verifica se tem tamanho > 5 e possui 1 espaço
                         if (nomeCompleto.value.length > 5 &&
                             nomeCompleto.value.toString().includes(" ") == true) {

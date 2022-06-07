@@ -179,63 +179,69 @@ var pessoal = 0;
 
 
 
-
         // Segunda sessão
         if (document.URL.toString().includes("registrar")) {
 
             // Variaveis para controlar se a condicao dos campos é verdadeira ou falsa:
             var nameValid = 0;
+            var dateValid = 0;
 
-            { // Consistência nome completo
+            {
+                // Consistência nome completo
+                {//
+                    // [HTML / Element] input - nome completo
+                    const nomeCompleto = document.querySelector(".register-name").children[1]
 
-                // [HTML / Element] input - nome completo
-                const nomeCompleto = document.querySelector(".register-name").children[1]
+                    // Primeiro nome obtido atraves do nome completo
+                    var primeiroNome = nomeCompleto.value.toString().split(" ")[0];
+                    // Segundo nome obtido atraves do nome completo
+                    var segundoNome = nomeCompleto.value.toString().split(" ")[1];
 
-                // Primeiro nome obtido atraves do nome completo
-                var primeiroNome = nomeCompleto.value.toString().split(" ")[0];
-                // Segundo nome obtido atraves do nome completo
-                var segundoNome = nomeCompleto.value.toString().split(" ")[1];
+                    // Faz consistência de dados
+                    // Tamanho > 5
+                    // Precisa ter 1 espaço
 
-                // Faz consistência de dados
-                // Tamanho > 5
-                // Precisa ter 1 espaço
+                    // Loop p/ verificar existencia de numeros
+                    for (let i = 0; i <= nomeCompleto.value.toString().length - 1; i++) {
 
-
-                // Loop p/ verificar existencia de numeros
-                for (let i = 0; i <= nomeCompleto.value.toString().length - 1; i++) {
-
-                    if (texto.split("")[i] == "0" ||
-                        texto.split("")[i] == "1" ||
-                        texto.split("")[i] == "2" ||
-                        texto.split("")[i] == "3" ||
-                        texto.split("")[i] == "4" ||
-                        texto.split("")[i] == "5" ||
-                        texto.split("")[i] == "6" ||
-                        texto.split("")[i] == "7" ||
-                        texto.split("")[i] == "8" ||
-                        texto.split("")[i] == "9") {
-                        // Existem numeros.
-                        // .
-                        // .
-                        passValid = 0;
-                        break;
-                    } else {
-                        // Nao existem numeros.
-                        // .
-                        // .
-                        if (nomeCompleto.value.length > 5 &&
-                            nomeCompleto.value.toString().includes(" ") == true) {
-                            nameValid = 1;
+                        if (texto.split("")[i] == "0" ||
+                            texto.split("")[i] == "1" ||
+                            texto.split("")[i] == "2" ||
+                            texto.split("")[i] == "3" ||
+                            texto.split("")[i] == "4" ||
+                            texto.split("")[i] == "5" ||
+                            texto.split("")[i] == "6" ||
+                            texto.split("")[i] == "7" ||
+                            texto.split("")[i] == "8" ||
+                            texto.split("")[i] == "9") {
+                            // Existem numeros.
+                            passValid = 0;
+                            break;
                         } else {
-                            nameValid = 0;
+                            // Nao existem numeros.
+                            if (nomeCompleto.value.length > 5 &&
+                                nomeCompleto.value.toString().includes(" ") == true) {
+                                nameValid = 1;
+                            } else {
+                                nameValid = 0;
+                            }
                         }
                     }
                 }
-            }
 
+
+
+                // Consistencia Data de Nascimento
+                {//
+                    // [HTML / Element] input - campo data de nascimento
+                    const dataField = document.querySelector(".register-DNS").children[1]
+
+
+                }
+            }
             console.log(`
-        CONSISTENCIA DE CAMPOS - 2ª SESSÃO \n
-        * Nome: ${nameValid} \n`)
+            CONSISTENCIA DE CAMPOS - 2ª SESSÃO \n
+            * Nome: ${nameValid} \n`)
         }
     }
 })();
@@ -253,6 +259,7 @@ const passField = document.querySelector(".register-pass").children[1];
 // 1 -- IIFE formatCPF() -- 1
 (function () {
 
+    // Sessão 1
     // Adiciona listener keypress
     cpfField.addEventListener("keypress", () => {
         var cpfLeng = cpfField.value.length
@@ -263,6 +270,23 @@ const passField = document.querySelector(".register-pass").children[1];
             cpfField.value = cpfField.value + "-"
         }
     })
+
+
+    // Sessão 2
+    if (document.URL.toString().includes("registrar")){
+        // [Element / HTML] Input do nome (registrar.html)
+        const dataField = document.querySelector(".register-DNS").children[1]
+
+        // Adiciona listener keypress
+        dataField.addEventListener("keypress", () => {
+            dataLeng = dataField.value.toString().length;
+            // adiciona o caractere '-' na quinta posição do cep
+            if (dataLeng == 5){
+                dataField.value = dataField.value + "-";
+            }
+        })
+    }
+
 })()
 
 

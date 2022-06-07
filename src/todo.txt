@@ -1,10 +1,14 @@
 TODO:
-07.06_2_ - Fazer consistência do nome completo. *(ver arquivo consistency-text.js, ultima linha)
+07.06_3_F - Fazer consistência e formatação do campo Data de nascimento. (Escrita, minimo 18 anos, 1900+)
+07.06_4_F - Fazer consistencia e formatação do campo CEP. (02474-120, xhr no app)
+07.06_5_F - Preencher os outros campos apartir do resultado do xhr do CEP.
+
 
 
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 DONE:
+07.06_2_V - Fazer consistência do nome completo. *(ver arquivo consistency-text.js, ultima linha)
 07.06_1_V - Solucionar href no botão 'cadastrar' em 'index.html' no submenu utilizando dev mode.
 -
 06.06_3_V - informar senha invalida em 'registrar.html'.
