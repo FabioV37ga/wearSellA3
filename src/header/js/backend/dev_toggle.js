@@ -22,28 +22,45 @@
             break;
     }
 
-    function redirectTo(e) {
-        var ext = e;
-        // console.log("+.html")
+    function redirectTo(ext) {
+        // Elementos a terem href modificado:
+        {
+            // click no perfil - perfil.html
+            var perfilMobile = document.querySelector(".profile-pic-mobile").children[0];
 
-        var perfilMobile = document.querySelector(".profile-pic-mobile").children[0];
-        var loginMobile = document.querySelector(".profile-text").children[0];
-        var perfilDesktop = document.querySelectorAll(".icon")[0].children[0];
-        var loginDesktop = document.querySelectorAll(".icon")[0].children[1].children[0];
-        var loginDesktop_1 = document.querySelectorAll(".icon")[0].children[1].children[2];
+            // click no 'acesse sua conta' - login.html
+            var loginMobile = document.querySelector(".profile-text").children[0];
 
-        
-        var elements = [perfilMobile, loginMobile, perfilDesktop, loginDesktop, loginDesktop_1]
-        
-        // console.log(elements)
-        
+            // click no 'ou cadastre-se' - login.html
+            var cadastrarMobile = document.querySelector(".profile-text").children[2].children[0];
+
+            // click no perfil - perfil.html
+            var perfilDesktop = document.querySelectorAll(".icon")[0].children[0];
+
+            // click no entrar - login.html
+            var loginDesktop = document.querySelectorAll(".icon")[0].children[1].children[0];
+
+            // click no cadastrar - login.html
+            var loginDesktop_1 = document.querySelectorAll(".icon")[0].children[1].children[2];
+        }
+
+        // Lista de todos os elementos:
+        var elements = [
+            perfilMobile,
+            loginMobile,
+            cadastrarMobile,
+            perfilDesktop,
+            loginDesktop,
+            loginDesktop_1
+        ]
+
+        // Coloca '.html' no final das urls que ainda não tem a extensão.
         for (let i = 0; i <= elements.length - 1; i++) {
             var elemento = elements[i];
-            elemento.href = elemento.href + ext
+            //  Se o url já possuir '.html', não adicionar novamente
+            // if (document.URL.toString().contains(".html") == false) {
+                elemento.href = elemento.href + ext
+            // }
         }
-        
-        var cadastrar = document.querySelectorAll(".icon")[1].children[1].children[0];
-
     }
-
 })()

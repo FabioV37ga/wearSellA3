@@ -1,4 +1,13 @@
 TODO:
-06.06_1 - informar cpf invalido em 'login.html' e 'registrar.html'.
-06.06_2 - informar e-mail invalido em 'registrar.html'.
-06.06_3 - informar senha invalida em 'registrar.html'.
+07.06_2_ - Fazer consistência do nome completo. *(ver arquivo consistency-text.js, ultima linha)
+
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+DONE:
+07.06_1_V - Solucionar href no botão 'cadastrar' em 'index.html' no submenu utilizando dev mode.
+-
+06.06_3_V - informar senha invalida em 'registrar.html'.
+06.06_2_V - informar e-mail invalido em 'registrar.html'.
+06.06_1_V - informar cpf invalido em 'login.html' e 'registrar.html'.
+
