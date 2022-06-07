@@ -173,7 +173,8 @@ target: 1.  'login.html'
                         // Nao existem numeros.
                         // Verifica se tem tamanho > 5 e possui 1 espaço
                         if (nomeCompleto.value.length > 5 &&
-                            nomeCompleto.value.toString().includes(" ") == true) {
+                            nomeCompleto.value.toString().includes(" ") == true &&
+                            nomeCompleto.value.toString() != "") {
                             // Sucesso
                             nomeCompleto.placeholder = ""
                             nomeCompleto.style.border = "1px solid #ccc"
