@@ -6,6 +6,9 @@
     de campos de cadastro seguindo um padrao de regras.
 */
 
+
+
+
 // Essa iife é responsável por preencher automaticamente os campos de CPF e SENHA
 // com os valores digitados na tela anterior.
 (function () {
@@ -23,6 +26,10 @@
     // localStorage.setItem("cpf", "")
     // localStorage.setItem("pass", "")
 })();
+
+
+
+
 
 
 // Essa variavel define de a primeira sessão da pagina de registro está preenchida corretamente;
@@ -111,7 +118,7 @@ var pessoal = 0;
 
         // Campo CPF
         const campoCPF = document.querySelector(".register-CPF").children[1]
-        
+
         // Checa o CPF no campo e retorna se é valido.
         if (TestaCPF(campoCPF.value) == true) {
             // CPF VALIDO
@@ -142,7 +149,7 @@ var pessoal = 0;
             passValid = 0;
         }
 
-        
+
         // Função final da primeira sessão, retorna se todos os campos da sessão estão preenchidos corretamente
         // 0 : false
         // 1 : true;
@@ -150,7 +157,7 @@ var pessoal = 0;
             // -> PROSSEGUIR AQUI <-
             // .
             // .
-            document.querySelector("#sect2").scrollIntoView({behavior: 'smooth'});
+            document.querySelector("#sect2").scrollIntoView({ behavior: 'smooth' });
             pessoal = 1;
         } else {
             pessoal = 0;
@@ -163,6 +170,7 @@ var pessoal = 0;
         * Senha: ${passValid} \n`)
     }
 })();
+
 
 
 

@@ -65,7 +65,7 @@ function formatCpf(){
 
 // Essa sub-funcao remove espaços, pontos e hifens
 function regCommit() {
-    console.log("rgc")
+    // console.log("rgc")
     var field = cpfField.value.replaceAll(" ", "");
     field = field.replaceAll(".", "");
     field = field.replaceAll("-", "");

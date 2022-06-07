@@ -20,6 +20,7 @@ target: 1.  'login.html'
 
 
 
+
         { // Sessão CPF
             function TestaCPF(strCPF) {
 
@@ -61,30 +62,61 @@ target: 1.  'login.html'
         }
 
 
+
+
         {// Sessão senha
             const passField = document.querySelectorAll(".register-pass")
             var passValue = passField[0].children[1].value
 
-            if (passField.length > 1) {
-                if (passField[0].children[1].value.length > 7){
-                    if (passField[0].children[1].value == passField[1].children[1].value){
-
+            // Verifica se a senha possui ao menos 7 caracteres
+            if (passField[0].children[1].value.length >= 7) {
+                // Verifica se há necessidade de confirmar senha
+                // há necessidade de confirmar:
+                if (passField.length > 1) {
+                    // Verifica se o campo de confirmação é igual ao campo de senha:
+                    if (passField[0].children[1].value == passField[1].children[1].value) {
+                        // Verificação bem sucedida:
+                        passField[1].children[1].placeholder = ""
+                        passField[1].children[1].style.border = "1px solid #ccc";
+                    } else {
+                        // Verificação falha:
+                        passField[1].children[1].value = null;
+                        passField[1].children[1].placeholder = "As senhas não são iguais!"
+                        passField[1].children[1].style.border = "1px solid red";
                     }
                 }
+            } else {
+                // Não possui 7 caracteres!
+                passField[0].children[1].value = null;
+                passField[0].children[1].placeholder = "Mínimo de 7 caracteres!"
+                passField[0].children[1].style.border = "1px solid red"
             }
         }
 
 
-        {// Sessão E-mail
-            if (document.URL.toString().includes("registrar")) {
-                const campoMail = document.querySelector(".register-mail").children[1];
 
-                if (campoMail.length > 7 &&
-                    campoMail.toString().includes("@") &&
-                    campoMail.toString().includes(".com")) {
+
+        {// Sessão E-mail
+            // Só executa na aba 'registrar'
+            if (document.URL.toString().includes("registrar")) {
+
+                // [HTML / Element] input - campo e-mail
+                const campoMail = document.querySelector(".register-mail").children[1];
+                // Troca o valor do email por letrar minusculas p/ consistencia
+                campoMail.value = campoMail.value.toString().toLowerCase()
+
+                // Faz consistencia:
+                // Minimo de 7 chars, precisa incluir '@',
+                // precisa incluir '.com', não pode ter espaços.
+                if (campoMail.value.length > 7 &&
+                    campoMail.value.toString().includes("@") &&
+                    campoMail.value.toString().includes(".com") &&
+                    campoMail.value.toString().includes(" ") == false) {
+                    // Aplica efeito visual 'correto'.
                     campoMail.placeholder = ""
                     campoMail.style.border = "1px solid #ccc"
                 } else {
+                    // Aplica efeito sual 'incorreto'
                     campoMail.value = ""
                     campoMail.length--;
                     campoMail.placeholder = "O E-mail inserido é inválido."
@@ -92,6 +124,8 @@ target: 1.  'login.html'
                 }
             }
         }
+
+
 
     }
 })()
