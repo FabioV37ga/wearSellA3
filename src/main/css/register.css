@@ -1,4 +1,4 @@
-.register-container{
+.register-container {
     /* background: red; */
     height: auto;
     width: 333px;
@@ -12,41 +12,97 @@
     border-radius: 4px;
 }
 
-.auth form{
-    height:90% !important;
+.auth form {
+    height: 90% !important;
 }
 
-.register_{
+.register_ {
     margin-top: 0 !important;
     height: 472px !important
 }
 
-.register .label{
+.register .label {
     align-items: center !important;
     height: 22px;
     /* margin: 18px 0 0 0 !important; */
 }
 
-.register .label img{
+.register .label img {
     width: 20px
 }
 
-.register .label p{
+.register .label p {
     display: inline
 }
 
-.register-pass img{
+.register-pass img {
     width: 15px !important
 }
 
-.register-pass .label{
+.register-pass .label {
     display: flex;
     margin-top: 12px;
 }
 
-.short-input{
-    width: 50% !important; 
+.short-input {
+    width: 50% !important;
 }
-.address_{
+
+.address_ {
     height: 823px !important;
+}
+
+@media (min-width: 1024.11px) {
+    .main-container {
+        /* background:red; */
+        display: flex;
+        width: 1024px;
+        margin: 0 auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .address_ {
+        width: 675px !important;
+        height: 472px !important;
+    }
+
+    .register-break {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .auth-head {
+        margin-top: 30px;
+        width: 73.5%;
+    }
+
+    .register-container,
+    .address_ {
+        margin: 0 !important;
+    }
+
+    .address_ form {
+        width: 94.5%;
+    }
+
+    .address_ fieldset {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .address_ .register {
+        width: 45.5%;
+        margin-right: 10px;
+    }
+
+    .register .label {
+        height: initial
+    }
+
+    .register-container .commit-button {
+        display: none;
+        opacity: 0;
+        height: 0
+    }
 }
