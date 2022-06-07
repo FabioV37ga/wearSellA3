@@ -184,7 +184,7 @@ var pessoal = 0;
 
         // Segunda sessão
         if (document.URL.toString().includes("registrar")) {
-            
+
             // Variaveis para controlar se a condicao dos campos é verdadeira ou falsa:
             var nameValid = 0;
             var dateValid = 0;
@@ -245,32 +245,32 @@ var pessoal = 0;
 
                     if ((dia > 0 && dia <= 31) &&
                         (mes > 0 && mes <= 12) &&
-                        (ano >= 1900)){
+                        (ano >= 1900)) {
 
-                            var atual = new Date()
-                            if (atual.getFullYear() - ano >= 18){
+                        var atual = new Date()
+                        if (atual.getFullYear() - ano >= 18) {
 
-                                if (atual.getMonth()+1 == mes){
-                                    console.log("aqui")
-                                    if (atual.getDate() >= dia){
-                                        // 18 literal
-                                        dateValid = 1;
-                                    }else{
-                                        // 17
-                                        dateValid = 0;
-                                    }
-                                }else if (atual.getMonth()+1 > mes){
+                            if (atual.getMonth() + 1 == mes) {
+                                console.log("aqui")
+                                if (atual.getDate() >= dia) {
                                     // 18 literal
                                     dateValid = 1;
-                                }else{
+                                } else {
                                     // 17
                                     dateValid = 0;
                                 }
-                            }else{
-                                // menor de idade
+                            } else if (atual.getMonth() + 1 > mes) {
+                                // 18 literal
+                                dateValid = 1;
+                            } else {
+                                // 17
                                 dateValid = 0;
                             }
+                        } else {
+                            // menor de idade
+                            dateValid = 0;
                         }
+                    }
                 }
             }
             console.log(`
@@ -308,7 +308,7 @@ const passField = document.querySelector(".register-pass").children[1];
 
 
     // Sessão 2
-    if (document.URL.toString().includes("registrar")){
+    if (document.URL.toString().includes("registrar")) {
         // [Element / HTML] Input do nome (registrar.html)
         const dataField = document.querySelector(".register-DNS").children[1]
 
@@ -316,7 +316,7 @@ const passField = document.querySelector(".register-pass").children[1];
         dataField.addEventListener("keypress", () => {
             dataLeng = dataField.value.toString().length;
             // adiciona o caractere '-' na quinta posição do cep
-            if (dataLeng == 2 || dataLeng == 5){
+            if (dataLeng == 2 || dataLeng == 5) {
                 dataField.value = dataField.value + "/";
             }
         })
