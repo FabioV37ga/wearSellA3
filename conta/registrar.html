@@ -345,7 +345,7 @@
                             <!-- register campo email -->
                             <div class="register register-CPF">
                                 <div class="label">CPF:</div>
-                                <input type="text">
+                                <input type="text" maxlength="14">
                             </div>
 
                             <!-- register campo senha -->
@@ -363,7 +363,7 @@
                             </div>
 
                             <!-- register commit button -->
-                            <button class="commit-button" type="button">
+                            <button class="commit-button -final" type="button">
                                 Prosseguir
                             </button>
 
@@ -390,13 +390,11 @@
                             <input type="text">
                         </div>
 
-                        <!-- register campo CPF -->
-                        <div class="register register-CPF">
+                        <!-- register campo Data de nascimento -->
+                        <div class="register register-DNS">
                             <div class="label">Data de nascimento:</div>
                             <input type="text" placeholder="dd/mm/aaaa">
                         </div>
-
-                        <!-- <div class="register-break"></div> -->
 
                         <!-- register campo CEP -->
                         <div class="register register-CEP">
@@ -437,7 +435,7 @@
                         </div>
 
                         <!-- register commit button -->
-                        <button class="commit-button" type="button" id="commit_2">
+                        <button class="commit-button -final" type="button" id="commit_2">
                             Cadastrar
                         </button>
 
@@ -449,6 +447,7 @@
     </main>
 
     <script src="../src/header/js/backend/dev_toggle.js"></script>
+    <script src="../src/main/js/consistency-text.js"></script>
     <script src="../src/header/js/frontend/dropmenu-mobile.js"></script>
     <!-- <script src="../src/header/js/frontend/debug.js"></script> -->
 

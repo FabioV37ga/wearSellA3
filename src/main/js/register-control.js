@@ -109,10 +109,15 @@ var pessoal = 0;
             return true;
         }
 
+        // Campo CPF
+        const campoCPF = document.querySelector(".register-CPF").children[1]
+        
         // Checa o CPF no campo e retorna se é valido.
-        if (TestaCPF(document.querySelector(".register-CPF").children[1].value) == true) {
+        if (TestaCPF(campoCPF.value) == true) {
+            // CPF VALIDO
             cpfValid = 1;
         } else {
+            // CPF INVALIDO
             cpfValid = 0;
         }
 

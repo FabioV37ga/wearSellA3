@@ -12,7 +12,7 @@
 
 
 // [Element / HTML] Input do CPF (registro)
-const cpfField = document.querySelector(".register-mail").children[1];
+const cpfField = document.querySelector(".register-CPF").children[1];
 
 // [Element / HTML] Input da senha (registro)
 const passField = document.querySelector(".register-pass").children[1];
@@ -42,19 +42,22 @@ function formatCpf(){
 (function () {
     // Botão final, commit.
     const registerButton = document.querySelectorAll(".commit-button")[1];
+    
+    const buttons = document.querySelectorAll(".-final");
 
-    // Field senha
-    const registerPassField = document.querySelector(".register-pass").children[1]
-
-    // Adiciona listener.click no botao.
-    registerButton.addEventListener("click", regCommit);
-
-    registerPassField.addEventListener("keypress", function(e){
-        if (e.key == "Enter"){
-            regCommit()
-        }
-    });
-
+    for (let i = 0; i <= buttons.length - 1; i++) {
+        // Field senha
+        const registerPassField = document.querySelector(".register-pass").children[1]
+    
+        // Adiciona listener.click no botao.
+        buttons[i].addEventListener("click", regCommit);
+    
+        registerPassField.addEventListener("keypress", function(e){
+            if (e.key == "Enter"){
+                regCommit()
+            }
+        });
+    }
 })();
 
 
@@ -62,6 +65,7 @@ function formatCpf(){
 
 // Essa sub-funcao remove espaços, pontos e hifens
 function regCommit() {
+    console.log("rgc")
     var field = cpfField.value.replaceAll(" ", "");
     field = field.replaceAll(".", "");
     field = field.replaceAll("-", "");
@@ -92,11 +96,7 @@ function regCommit() {
                     break;
             }
             
-        } else {
-            password.value = "";
-            password.value.length--;
-            password.placeholder = "Mínimo de 7 caracteres!"
-        }
+        } 
     }
 }
 
