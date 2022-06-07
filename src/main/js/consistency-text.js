@@ -76,7 +76,7 @@ target: 1.  'login.html'
 
 
         {// Sessão E-mail
-            if (window.URL.toString().includes("registrar")) {
+            if (document.URL.toString().includes("registrar")) {
                 const campoMail = document.querySelector(".register-mail").children[1];
 
                 if (campoMail.length > 7 &&
