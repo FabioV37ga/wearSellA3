@@ -15,7 +15,7 @@ window.LOGIN_STATE = 0;
 // IIFE checkAndRedirect()
 (function () {
     if (window.LOGIN_STATE == 0) {
-        switch (window.DEV_MODE){
+        switch (window.DEV_MODE) {
             case 0:
                 console.log("Desconectado, redirecionando...")
                 window.open("login", "_self")

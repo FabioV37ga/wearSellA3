@@ -289,9 +289,9 @@ var pessoal = 0;
                 {
                     const numeroField = document.querySelector(".register-numero").children[1]
 
-                    if (numeroField.value.length > 0){
+                    if (numeroField.value.length > 0) {
                         window.numeroValid = 1
-                    }else{
+                    } else {
                         window.numeroValid = 0
                     }
                 }
@@ -318,10 +318,10 @@ var pessoal = 0;
                 window.numeroValid == 1 &&
                 window.enderecoStates[1] == 1 &&
                 window.enderecoStates[2] == 1) {
-                    
+
                 pessoal = 1
 
-                if (acesso == 1 && acesso == pessoal){
+                if (acesso == 1 && acesso == pessoal) {
                     console.log("Todos os campos estão preenchidos e consitentes. \nRegistrar()")
                 }
             }
@@ -417,6 +417,6 @@ const passField = document.querySelector(".register-pass").children[1];
             cpfField.value = cpfField.value + "-"
         }
     })
-    
+
 })()
 

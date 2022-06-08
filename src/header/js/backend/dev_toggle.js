@@ -59,7 +59,7 @@
             var elemento = elements[i];
             //  Se o url já possuir '.html', não adicionar novamente
             // if (document.URL.toString().contains(".html") == false) {
-                elemento.href = elemento.href + ext
+            elemento.href = elemento.href + ext
             // }
         }
     }
