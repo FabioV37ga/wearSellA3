@@ -283,6 +283,18 @@ var pessoal = 0;
                         dateValid = 0;
                     }
                 }
+
+
+                // Consistencia numero (endereço)
+                {
+                    const numeroField = document.querySelector(".register-numero").children[1]
+
+                    if (numeroField.value.length > 0){
+                        window.numeroValid = 1
+                    }else{
+                        window.numeroValid = 0
+                    }
+                }
             }
 
 
@@ -303,10 +315,15 @@ var pessoal = 0;
                 dateValid == 1 &&
                 window.cepValid == 1 &&
                 window.enderecoStates[0] == 1 &&
-                window.numeroValie == 1 &&
+                window.numeroValid == 1 &&
                 window.enderecoStates[1] == 1 &&
                 window.enderecoStates[2] == 1) {
                 console.log("2 sessao full")
+                pessoal = 1
+                
+                if (acesso == 1 && acesso == pessoal){
+                    console.log("fim")
+                }
             }
         }
     }
@@ -400,5 +417,6 @@ const passField = document.querySelector(".register-pass").children[1];
             cpfField.value = cpfField.value + "-"
         }
     })
+    
 })()
 
