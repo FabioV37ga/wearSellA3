@@ -254,7 +254,7 @@ target: 1.  'login.html'
             // [HTML / Element] input - campo CEP
             const cepField = document.querySelector(".register-CEP").children[1]
 
-            cepField.addEventListener('keypress', () => {
+            cepField.addEventListener('keydown', () => {
                 if (cepField.value.length == 5) {
                     cepField.value = cepField.value + "-"
                 }

@@ -21,8 +21,8 @@ const passField = document.querySelector(".register-pass").children[1];
 formatCpf()
 function formatCpf() {
 
-    // Adiciona listener keypress
-    cpfField.addEventListener("keypress", () => {
+    // Adiciona listener keydown
+    cpfField.addEventListener("keydown", () => {
         var cpfLeng = cpfField.value.length
 
         // troca os valores nos caracteres respectivos por . e -
@@ -52,7 +52,7 @@ function formatCpf() {
         // Adiciona listener.click no botao.
         buttons[i].addEventListener("click", regCommit);
 
-        registerPassField.addEventListener("keypress", function (e) {
+        registerPassField.addEventListener("keydown", function (e) {
             if (e.key == "Enter") {
                 regCommit()
             }

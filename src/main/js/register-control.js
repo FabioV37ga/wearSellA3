@@ -58,7 +58,7 @@ var pessoal = 0;
     const confirm = document.querySelector(".confirm").children[1];
 
     // Adiciona evento click no botão 
-    confirm.addEventListener("keypress", function (e) {
+    confirm.addEventListener("keydown", function (e) {
         switch (e.key) {
             case "Enter": commit();
         }
@@ -344,8 +344,8 @@ var pessoal = 0;
         // [Element / HTML] Input do nome (registrar.html)
         const dataField = document.querySelector(".register-DNS").children[1]
 
-        // Adiciona listener keypress
-        dataField.addEventListener("keypress", () => {
+        // Adiciona listener keydown
+        dataField.addEventListener("keydown", () => {
             dataLeng = dataField.value.toString().length;
             // adiciona o caractere '-' na quinta posição do cep
             if (dataLeng == 2 || dataLeng == 5) {
@@ -360,7 +360,7 @@ var pessoal = 0;
             // [HTML / Element] input - campo CEP
             const cepField = document.querySelector(".register-CEP").children[1]
 
-            cepField.addEventListener('keypress', () => {
+            cepField.addEventListener('keydown', () => {
                 if (cepField.value.length == 5) {
                     cepField.value = cepField.value + "-"
                 }
@@ -407,8 +407,8 @@ const passField = document.querySelector(".register-pass").children[1];
 (function () {
 
     // Sessão 1
-    // Adiciona listener keypress
-    cpfField.addEventListener("keypress", () => {
+    // Adiciona listener keydown
+    cpfField.addEventListener("keydown", () => {
         var cpfLeng = cpfField.value.length
         // troca os valores nos caracteres respectivos por . e -
         if (cpfLeng == 3 || cpfLeng == 7) {
