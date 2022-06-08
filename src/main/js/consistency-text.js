@@ -127,10 +127,6 @@ target: 1.  'login.html'
 
 
 
-
-
-
-
         // Segunda sessão
         if (document.URL.toString().includes("registrar")) {
 
@@ -176,11 +172,13 @@ target: 1.  'login.html'
                             nomeCompleto.value.toString().includes(" ") == true &&
                             nomeCompleto.value.toString() != "") {
                             // Sucesso
+                            console.log("suc")
                             nomeCompleto.placeholder = ""
                             nomeCompleto.style.border = "1px solid #ccc"
                         } else {
                             // Erro: Nome incompleto
-                            nomeCompleto.value = null
+                            nomeCompleto.value = ""
+                            nomeCompleto.value.length--
                             nomeCompleto.placeholder = "Insira o nome completo."
                             nomeCompleto.style.border = "1px solid red"
                         }
@@ -249,6 +247,47 @@ target: 1.  'login.html'
             }
         }
     }
+
+    // Consistencia campo CEP
+    {
+        // [HTML / Element] input - campo CEP
+        const cepField = document.querySelector(".register-CEP").children[1]
+
+        cepField.addEventListener('keypress', () => {
+            if (cepField.value.length == 5) {
+                cepField.value = cepField.value + "-"
+            }
+        })
+
+        cepField.addEventListener("focusout", () => {
+            // Busca cep no api
+            consultaCep()
+        })
+
+        function consultaCep(){
+            var $cep = cepField.value.replace("-", "")
+            var url = 'https://viacep.com.br/ws/' + $cep + "/json"
+            var request = new XMLHttpRequest();
+            request.open('GET', url);
+
+            request.onload = () => {
+                var response = JSON.parse(request.responseText)
+                changeAddress(response.logradouro,response.localidade,response.uf)
+            }
+            request.send();
+        }
+
+        function changeAddress(rua,cidade,estado){
+            const inputRua = document.querySelector(".register-address").children[1]
+            const inputCidade = document.querySelector(".register-cidade").children[1]
+            const inputEstado = document.querySelector(".register-estado").children[1]
+            
+            inputRua.value = rua
+            inputCidade.value = cidade
+            inputEstado.value = estado
+        }
+    }
+
 })()
 
 

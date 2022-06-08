@@ -182,12 +182,19 @@ var pessoal = 0;
 
 
 
+
+
+
+
+
+
         // Segunda sessão
         if (document.URL.toString().includes("registrar")) {
 
             // Variaveis para controlar se a condicao dos campos é verdadeira ou falsa:
             var nameValid = 0;
             var dateValid = 0;
+            var cepValid = 0;
 
             {
                 // Consistência nome completo
@@ -234,6 +241,7 @@ var pessoal = 0;
 
 
 
+
                 // Consistencia Data de Nascimento
                 {//
                     // [HTML / Element] input - campo data de nascimento
@@ -273,15 +281,54 @@ var pessoal = 0;
                         }
                     } else {
                         // input invalido
-                        console.log(dia + "/" + mes + "/" + ano)
                         dateValid = 0;
                     }
                 }
+
+
+
+
+
+                // Consistencia campo CEP
+                {
+                    // [HTML / Element] input - campo CEP
+                    const cepField = document.querySelector(".register-CEP").children[1]
+
+                    cepField.addEventListener('keypress', () => {
+                        if (cepField.value.length == 5) {
+                            cepField.value = cepField.value + "-"
+                        }
+                    })
+
+                    cepField.addEventListener("focusout", () => {
+                        // Busca cep no api
+                        consultaCep()
+                    })
+
+                    function consultaCep() {
+                        var $cep = cepField.value.replace("-", "")
+                        var url = 'https://viacep.com.br/ws/' + $cep + "/json"
+                        var request = new XMLHttpRequest();
+                        request.open('GET', url);
+
+                        request.onerror = () => {
+                            cepValid = 0
+                        }
+                        request.onload = () => {
+                            var response = JSON.parse(request.responseText)
+                            cepValid = 1
+                        }
+                        request.send();
+
+                    }
+                }
             }
+            //LOG
             console.log(`
             CONSISTENCIA DE CAMPOS - 2ª SESSÃO \n
             * Nome: ${nameValid} \n
-            * Data de Nascimento: ${dateValid}\n`)
+            * Data de Nascimento: ${dateValid}\n
+            * CEP: ${cepValid}`)
         }
     }
 })();
