@@ -318,11 +318,11 @@ var pessoal = 0;
                 window.numeroValid == 1 &&
                 window.enderecoStates[1] == 1 &&
                 window.enderecoStates[2] == 1) {
-                console.log("2 sessao full")
+                    
                 pessoal = 1
-                
+
                 if (acesso == 1 && acesso == pessoal){
-                    console.log("fim")
+                    console.log("Todos os campos estão preenchidos e consitentes. \nRegistrar()")
                 }
             }
         }
