@@ -1,9 +1,9 @@
 TODO:
-07.06_5_F - Preencher os outros campos apartir do resultado do xhr do CEP.
-
+08.06_1_F - 
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 DONE:
+07.06_5_v - Preencher os outros campos apartir do resultado do xhr do CEP.
 07.06_4_V - Fazer consistencia e formatação do campo CEP. (02474-120, xhr no app)
 07.06_3_V - Fazer consistência e formatação do campo Data de nascimento. (Escrita, minimo 18 anos, 1900+)
 07.06_2_V - Fazer consistência do nome completo. *(ver arquivo consistency-text.js, ultima linha)
@@ -13,3 +13,46 @@ DONE:
 06.06_2_V - informar e-mail invalido em 'registrar.html'.
 06.06_1_V - informar cpf invalido em 'login.html' e 'registrar.html'.
 -
+
+ console.log(rua)
+            if (rua != undefined && rua != "") {
+                inputRua.value = rua
+                inputRua.setAttribute("disabled", true)
+                cepField.style.border = "1px solid #ccc"
+                window.ruaValid = 1
+            } else {
+                inputRua.value = ""
+                inputRua.removeAttribute("disabled")
+                window.ruaValid = 0
+                if (rua == undefined) {
+                    cepField.style.border = "1px solid red"
+                }
+            }
+
+            if (cidade != undefined && rua != "") {
+                inputCidade.value = cidade
+                inputCidade.setAttribute("disabled", true)
+                cepField.style.border = "1px solid #ccc"
+                window.cidadeValid = 1
+            } else {
+                inputCidade.value = ""
+                inputCidade.removeAttribute("disabled")
+                window.cidadeValid = 0
+                if (cidade == undefined) {
+                    cepField.style.border = "1px solid red"
+                }
+            }
+
+            if (estado != undefined && rua != "") {
+                inputEstado.value = estado
+                inputEstado.setAttribute("disabled", true)
+                cepField.style.border = "1px solid #ccc"
+                window.estadoValid = 1
+            } else {
+                inputEstado.value = ""
+                inputEstado.removeAttribute("disabled")
+                window.estadoValid = 0
+                if (estado == undefined) {
+                    cepField.style.border = "1px solid red"
+                }
+            }

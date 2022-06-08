@@ -172,7 +172,6 @@ target: 1.  'login.html'
                             nomeCompleto.value.toString().includes(" ") == true &&
                             nomeCompleto.value.toString() != "") {
                             // Sucesso
-                            console.log("suc")
                             nomeCompleto.placeholder = ""
                             nomeCompleto.style.border = "1px solid #ccc"
                         } else {
@@ -248,6 +247,7 @@ target: 1.  'login.html'
         }
     }
 
+    window.enderecoStates = [0, 0, 0]
     // Consistencia campo CEP
     {
         // [HTML / Element] input - campo CEP
@@ -264,7 +264,8 @@ target: 1.  'login.html'
             consultaCep()
         })
 
-        function consultaCep(){
+
+        function consultaCep() {
             var $cep = cepField.value.replace("-", "")
             var url = 'https://viacep.com.br/ws/' + $cep + "/json"
             var request = new XMLHttpRequest();
@@ -272,22 +273,50 @@ target: 1.  'login.html'
 
             request.onload = () => {
                 var response = JSON.parse(request.responseText)
-                changeAddress(response.logradouro,response.localidade,response.uf)
+                changeAddress(response.logradouro, response.localidade, response.uf)
             }
-            request.send();
+
+            request.onerror = () => {
+                cepField.style.border = "1px solid red"
+                changeAddress(" ", " ", " ")
+            }
+            if ($cep.length == 8) {
+                request.send();
+            } else {
+                changeAddress(" ", " ", " ", 1)
+            }
         }
 
-        function changeAddress(rua,cidade,estado){
+
+        function changeAddress(rua, cidade, estado, error) {
             const inputRua = document.querySelector(".register-address").children[1]
             const inputCidade = document.querySelector(".register-cidade").children[1]
             const inputEstado = document.querySelector(".register-estado").children[1]
-            
-            inputRua.value = rua
-            inputCidade.value = cidade
-            inputEstado.value = estado
+
+            var endereco = [rua, cidade, estado]
+            var inputs = [inputRua, inputCidade, inputEstado];
+            window.enderecoStates = [0, 0, 0];
+
+            for (let i = 0; i <= endereco.length - 1; i++) {
+                if (cepField.value.length < 9) {
+                    inputs[i].value = ""
+                    inputs[i].removeAttribute("disabled")
+                    window.enderecoStates[i] = 0;
+
+                } else if (endereco[i] == undefined || endereco[i] == "") {
+                    inputs[i].value = ""
+                    inputs[i].removeAttribute("disabled")
+                    window.enderecoStates[i] = 0;
+                } else {
+                    inputs[i].value = endereco[i]
+                    inputs[i].setAttribute("disabled", true)
+                    window.enderecoStates[i] = 1;
+                }
+
+            }
+
         }
     }
-
 })()
 
 

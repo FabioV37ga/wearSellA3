@@ -177,7 +177,7 @@ var pessoal = 0;
         CONSISTENCIA DE CAMPOS - 1ª SESSÃO \n
         * Email: ${mailValid} \n
         * CPF: ${cpfValid} \n
-        * Senha: ${passValid} \n`)
+        * Senha: ${passValid}`)
         }
 
 
@@ -194,7 +194,6 @@ var pessoal = 0;
             // Variaveis para controlar se a condicao dos campos é verdadeira ou falsa:
             var nameValid = 0;
             var dateValid = 0;
-            var cepValid = 0;
 
             {
                 // Consistência nome completo
@@ -284,56 +283,100 @@ var pessoal = 0;
                         dateValid = 0;
                     }
                 }
-
-
-
-
-
-                // Consistencia campo CEP
-                {
-                    // [HTML / Element] input - campo CEP
-                    const cepField = document.querySelector(".register-CEP").children[1]
-
-                    cepField.addEventListener('keypress', () => {
-                        if (cepField.value.length == 5) {
-                            cepField.value = cepField.value + "-"
-                        }
-                    })
-
-                    cepField.addEventListener("focusout", () => {
-                        // Busca cep no api
-                        consultaCep()
-                    })
-
-                    function consultaCep() {
-                        var $cep = cepField.value.replace("-", "")
-                        var url = 'https://viacep.com.br/ws/' + $cep + "/json"
-                        var request = new XMLHttpRequest();
-                        request.open('GET', url);
-
-                        request.onerror = () => {
-                            cepValid = 0
-                        }
-                        request.onload = () => {
-                            var response = JSON.parse(request.responseText)
-                            cepValid = 1
-                        }
-                        request.send();
-
-                    }
-                }
             }
+
+
             //LOG
             console.log(`
-            CONSISTENCIA DE CAMPOS - 2ª SESSÃO \n
-            * Nome: ${nameValid} \n
-            * Data de Nascimento: ${dateValid}\n
-            * CEP: ${cepValid}`)
+        CONSISTENCIA DE CAMPOS - 2ª SESSÃO \n
+        * Nome: ${nameValid} \n
+        * Data de Nascimento: ${dateValid}\n
+        * CEP: ${window.cepValid} \n
+        * Rua: ${window.enderecoStates[0]} \n
+        * Numero: 0 \n
+        * Complemento: 1 \n
+        * Cidade: ${window.enderecoStates[1]}\n
+        * Estado: ${window.enderecoStates[2]}\n`)
+
+            if (
+                nameValid == 1 &&
+                dateValid == 1 &&
+                window.cepValid == 1 &&
+                window.enderecoStates[0] == 1 &&
+                window.numeroValie == 1 &&
+                window.enderecoStates[1] == 1 &&
+                window.enderecoStates[2] == 1) {
+                console.log("2 sessao full")
+            }
         }
     }
+
 })();
 
 
+
+
+
+
+(function () {
+
+    window.cepValid = 0;
+
+    // Sessão 2
+    if (document.URL.toString().includes("registrar")) {
+        // [Element / HTML] Input do nome (registrar.html)
+        const dataField = document.querySelector(".register-DNS").children[1]
+
+        // Adiciona listener keypress
+        dataField.addEventListener("keypress", () => {
+            dataLeng = dataField.value.toString().length;
+            // adiciona o caractere '-' na quinta posição do cep
+            if (dataLeng == 2 || dataLeng == 5) {
+                dataField.value = dataField.value + "/";
+            }
+        })
+
+
+
+        // Consistencia campo CEP
+        {
+            // [HTML / Element] input - campo CEP
+            const cepField = document.querySelector(".register-CEP").children[1]
+
+            cepField.addEventListener('keypress', () => {
+                if (cepField.value.length == 5) {
+                    cepField.value = cepField.value + "-"
+                }
+            })
+
+            cepField.addEventListener("focusout", () => {
+                // Busca cep no api
+                consultaCep()
+            })
+
+            function consultaCep() {
+
+                var $cep = cepField.value.replace("-", "")
+                var url = 'https://viacep.com.br/ws/' + $cep + "/json"
+                var request = new XMLHttpRequest();
+                request.open('GET', url);
+
+                request.onerror = () => {
+                    window.cepValid = 0
+                }
+                request.onload = () => {
+                    window.cepValid = 1;
+                    var response = JSON.parse(request.responseText)
+                }
+                if ($cep.length == 8) {
+                    request.send();
+                }
+
+            }
+        }
+
+    }
+})()
 
 
 // [Element / HTML] Input do CPF (registro)
@@ -357,20 +400,5 @@ const passField = document.querySelector(".register-pass").children[1];
             cpfField.value = cpfField.value + "-"
         }
     })
-
-
-    // Sessão 2
-    if (document.URL.toString().includes("registrar")) {
-        // [Element / HTML] Input do nome (registrar.html)
-        const dataField = document.querySelector(".register-DNS").children[1]
-
-        // Adiciona listener keypress
-        dataField.addEventListener("keypress", () => {
-            dataLeng = dataField.value.toString().length;
-            // adiciona o caractere '-' na quinta posição do cep
-            if (dataLeng == 2 || dataLeng == 5) {
-                dataField.value = dataField.value + "/";
-            }
-        })
-    }
 })()
+
