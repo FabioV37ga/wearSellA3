@@ -1,9 +1,11 @@
 TODO:
-08.06_1_F - 
+
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 DONE:
-07.06_5_v - Preencher os outros campos apartir do resultado do xhr do CEP.
+08.06_1_V - Fazer consistência dos ultimos campos da 2ª sessão e fazer campo final.
+-
+07.06_5_V - Preencher os outros campos apartir do resultado do xhr do CEP.
 07.06_4_V - Fazer consistencia e formatação do campo CEP. (02474-120, xhr no app)
 07.06_3_V - Fazer consistência e formatação do campo Data de nascimento. (Escrita, minimo 18 anos, 1900+)
 07.06_2_V - Fazer consistência do nome completo. *(ver arquivo consistency-text.js, ultima linha)
