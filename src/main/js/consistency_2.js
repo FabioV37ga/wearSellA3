@@ -204,7 +204,6 @@ window.pessoal = 0;
                 if (parseInt(numeroField.value) > 0 &&
                     numeroField.value != "") {
                     window.numeroValid = 1
-                    console.log("rola")
                 } else {
                     window.numeroValid = 0
                 }
@@ -223,6 +222,19 @@ window.pessoal = 0;
          * Cidade: ${window.enderecoStates[1]}\n
         * Estado: ${window.enderecoStates[2]}\n`)
 
+         // Verifica se a sessão foi desbloqueada.
+         if (
+            window.nameValid == 1 &&
+            window.dateValid == 1 &&
+            window.cepValid == 1 &&
+            window.enderecoStates[0] == 1 &&
+            window.numeroValid == 1 &&
+            window.enderecoStates[1] == 1 &&
+            window.enderecoStates[2] == 1) {
+
+            console.log("A sessão 2 foi desbloqueada")
+            window.pessoal = 1
+        }
     }
 
 })();
