@@ -245,13 +245,15 @@ window.acesso = 0;
             const cpfField = document.querySelector(".register-CPF").children[1];
 
             // Adiciona listener keydown
-            cpfField.addEventListener("keydown", () => {
-                var cpfLeng = cpfField.value.length
-                // troca os valores nos caracteres respectivos por . e -
-                if (cpfLeng == 3 || cpfLeng == 7) {
-                    cpfField.value = cpfField.value + "."
-                } else if (cpfLeng == 11) {
-                    cpfField.value = cpfField.value + "-"
+            cpfField.addEventListener("keydown", function (e) {
+                if (e.keyCode != 8 && e.keyCode != 46) {
+                    var cpfLeng = cpfField.value.length
+                    // troca os valores nos caracteres respectivos por . e -
+                    if (cpfLeng == 3 || cpfLeng == 7) {
+                        cpfField.value = cpfField.value + "."
+                    } else if (cpfLeng == 11) {
+                        cpfField.value = cpfField.value + "-"
+                    }
                 }
             })
             // Resultado final = xxx.xxx.xxx-xx

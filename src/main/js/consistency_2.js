@@ -222,8 +222,8 @@ window.pessoal = 0;
          * Cidade: ${window.enderecoStates[1]}\n
         * Estado: ${window.enderecoStates[2]}\n`)
 
-         // Verifica se a sessão foi desbloqueada.
-         if (
+        // Verifica se a sessão foi desbloqueada.
+        if (
             window.nameValid == 1 &&
             window.dateValid == 1 &&
             window.cepValid == 1 &&
@@ -339,13 +339,15 @@ window.pessoal = 0;
         const dataField = document.querySelector(".register-DNS").children[1]
 
         // Adiciona listener keydown
-        dataField.addEventListener("keydown", () => {
-            dataLeng = dataField.value.toString().length;
-            // adiciona o caractere '/' nas posições '2' e '5'
-            if (dataLeng == 2 || dataLeng == 5) {
-                dataField.value = dataField.value + "/";
+        dataField.addEventListener("keydown", function (e) {
+            if (e.keyCode != 8 && e.keyCode != 46) {
+                dataLeng = dataField.value.toString().length;
+                // adiciona o caractere '/' nas posições '2' e '5'
+                if (dataLeng == 2 || dataLeng == 5) {
+                    dataField.value = dataField.value + "/";
+                }
+                // resultado final: xx/xx/xxxx
             }
-            // resultado final: xx/xx/xxxx
         })
     }
 
@@ -356,12 +358,14 @@ window.pessoal = 0;
         const cepField = document.querySelector(".register-CEP").children[1]
 
         // Adiciona listener keydown
-        cepField.addEventListener('keydown', () => {
-            // adiciona o caractere '-' na posicao 5
-            if (cepField.value.length == 5) {
-                cepField.value = cepField.value + "-"
+        cepField.addEventListener("keydown", function (e) {
+            if (e.keyCode != 8 && e.keyCode != 46) {
+                // adiciona o caractere '-' na posicao 5
+                if (cepField.value.length == 5) {
+                    cepField.value = cepField.value + "-"
+                }
+                //resultado final: xxxxx-xxx
             }
-            //resultado final: xxxxx-xxx
         })
     }
 
